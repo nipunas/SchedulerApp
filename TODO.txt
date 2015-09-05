@@ -1,0 +1,17 @@
+Task Planner
+================================================
+
+Server
+- Get tasks for a day/week/month
+-- time (from - to)
+-- date
+
+Client
+- Monthly view
+- Weekly view
+- Daily view
+
+- Tasks for today
+- Highlight task
+
+- Popup to create task
