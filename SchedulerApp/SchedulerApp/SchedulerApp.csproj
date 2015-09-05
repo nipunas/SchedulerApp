@@ -14,7 +14,7 @@
     <RootNamespace>SchedulerApp</RootNamespace>
     <AssemblyName>SchedulerApp</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -86,6 +86,8 @@
     <Content Include="App\Controllers\TaskController.js" />
     <Content Include="App\Services\httpService.js" />
     <Content Include="App\Shared\Menu\menu.html" />
+    <Content Include="App\Models\Task.js" />
+    <Content Include="App\Templates\CreateTask.html" />
     <Content Include="App\Templates\TaskTemplate.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -931,7 +933,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>60913</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:60913/</IISUrl>
+          <IISUrl>http://localhost/SchedulerApp</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

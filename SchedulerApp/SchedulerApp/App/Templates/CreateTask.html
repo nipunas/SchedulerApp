@@ -1,0 +1,17 @@
+﻿<form id="create-task-form" class="form-holder">
+    <div style="padding: 15px;">
+        <label>Summary</label>
+        <input type="text" ng-model="task.Summary" />
+    </div>
+    <div style="padding: 15px;">
+        <label>Description</label>
+        <textarea ng-model="task.Description"></textarea>
+    </div>
+
+    <div style="margin: 15px; background-color:#ebe0e0;">
+        <h3>Task Summary is : {{ task.Summary }}</h3>
+        <p>Description is : {{ task.Description }}</p>
+    </div>
+
+    <input type="submit" value="Submit" ng-click="addTask()" />
+</form>

@@ -18,17 +18,20 @@
         background-color:#bac1c6;
     }
 
-.task-holder {
-    background-color: #f7eebe;
-    border: 1px solid #808080;
-    height: 120px;
-    width: 500px;
+.table-holder {
+    width: 60%;
     margin: 10px;
-    padding: 15px;
+    background-color:#5f5858;
 }
 
-.task-holder-summary {
-    border:1px solid #5f5858;
-    background:#def2ed;
-    font-size: 15px;
+.task-holder {
+    background-color: #f1eeee;
+    width: 500px;
+}
+
+.form-holder {
+    width: 500px;
+    margin: 15px;
+    background: #f1eeee;
+    border:#bac1c6;
 }

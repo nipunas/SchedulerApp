@@ -3,7 +3,7 @@
     var httpService = function ($http) {
 
         var urlFactory = function (service) {
-            var path = 'http://localhost:60913/';
+            var path = 'http://localhost/SchedulerApp/';
 
             switch (service) {
                 case 'tasks':

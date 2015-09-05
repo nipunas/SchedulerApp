@@ -1,3 +1,11 @@
 *.pdb
 *.cache
 *.suo
+[Dd]ebug/
+[Rr]elease/
+[Bb]in/
+[Oo]bj/
+
+#Nuget
+packages/
+*.nupkg

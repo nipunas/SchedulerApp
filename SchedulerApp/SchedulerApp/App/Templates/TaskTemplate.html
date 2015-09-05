@@ -1,7 +1,16 @@
 ﻿<input type="button" ng-click="search()" value="Get Tasks" />
 
-<div class="task-holder" ng-repeat="item in tasks">
-    <div ng-hide="1">{{item.Id}}</div>
-    <div class="task-holder-summary">{{item.Summary}}</div>
-    <div>{{item.Description}}</div>
-</div>
+<table class="table-holder">
+    <thead>
+        <tr style="padding:4px 0 4px 0;">
+            <th ng-hide="1">Id</th>
+            <th>Summary</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tr class="task-holder" ng-repeat="task in tasks">
+        <td ng-hide="1">{{ task.Id }}</td>
+        <td>{{ task.Summary }}</td>
+        <td>{{ task.Description }}</td>
+    </tr>
+</table>
