@@ -21,12 +21,12 @@
 .table-holder {
     width: 60%;
     margin: 10px;
-    background-color:#5f5858;
 }
 
-.task-holder {
-    background-color: #f1eeee;
-    width: 500px;
+.task-form {
+    /*width: 500px;*/
+    margin: 25px;
+    padding:25px;
 }
 
 .form-holder {

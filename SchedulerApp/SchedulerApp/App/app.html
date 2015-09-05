@@ -9,6 +9,9 @@
     <link href="../Content/Styles.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.js"></script>
 
+    <!-- Bootstrap -->
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap-theme.min.css" rel="stylesheet" />
 </head>
 <body ng-app="SchedulerApp">
     <div ng-include="'Shared/Menu/menu.html'"></div>
@@ -17,8 +20,8 @@
     </div>
 
     <div ng-controller="TaskController">
-        <div ng-include="'Templates/CreateTask.html'"></div>
-        <div ng-include="'Templates/TaskTemplate.html'"></div>
+        <div class="panel panel-default task-form col-md-5" ng-include="'Templates/CreateTask.html'"></div>
+        <div class="panel panel-default col-md-5" ng-include="'Templates/TaskTemplate.html'"></div>
     </div>
 </body>
 </html>
