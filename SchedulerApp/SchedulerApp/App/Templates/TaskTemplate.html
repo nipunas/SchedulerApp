@@ -1,0 +1,7 @@
+﻿<input type="button" ng-click="search()" value="Get Tasks" />
+
+<div class="task-holder" ng-repeat="item in tasks">
+    <div ng-hide="1">{{item.Id}}</div>
+    <div class="task-holder-summary">{{item.Summary}}</div>
+    <div>{{item.Description}}</div>
+</div>

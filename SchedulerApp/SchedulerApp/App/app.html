@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Scheduler App</title>
+    <script src="../Scripts/angular.js"></script>
+    <script src="app.js"></script>
+    <script src="Services/httpService.js"></script>
+    <script src="Controllers/TaskController.js"></script>
+    <link href="../Content/Styles.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.js"></script>
+
+</head>
+<body ng-app="SchedulerApp">
+    <div ng-include="'Shared/Menu/menu.html'"></div>
+    <div ng-controller="HeaderController">
+        <h1>{{title}}</h1>
+    </div>
+
+    <div ng-controller="TaskController">
+        <div ng-include="'Templates/TaskTemplate.html'"></div>
+    </div>
+</body>
+</html>

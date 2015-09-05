@@ -1,0 +1,30 @@
+﻿<html>
+<head>
+    <title>Scheduler App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.js"></script>
+
+    <script src="app.js"></script>
+    <script src="main.js"></script>
+    <script src="templateController.js"></script>
+    <script src="templateController2.js"></script>
+    <script src="service.js"></script>
+</head>
+<body ng-app="MyApp">
+    <a href="#/template">Back To Template</a>
+    <div ng-view style="border:1px solid #808080;">
+    </div>
+
+    <div ng-controller="MainController">
+        <div ng-include="'userdetails.html'"></div>
+        <input type="checkbox" ng-model="showItems" value="Show/Hide" />
+        <div ng-show="showItems" ng-repeat="item in items | orderBy: item">
+            <span>{{item}}</span>
+        </div>
+    </div>
+    <div ng-controller="SubController">
+        <div>{{info}}</div>
+    </div>
+</body>
+</html>
+

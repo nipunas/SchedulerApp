@@ -1,0 +1,5 @@
+E:\Repos\Github\SchedulerApp\SchedulerApp\DataAccess\bin\Debug\DataAccess.dll.config
+E:\Repos\Github\SchedulerApp\SchedulerApp\DataAccess\bin\Debug\DataAccess.dll
+E:\Repos\Github\SchedulerApp\SchedulerApp\DataAccess\bin\Debug\DataAccess.pdb
+E:\Repos\Github\SchedulerApp\SchedulerApp\DataAccess\obj\Debug\DataAccess.dll
+E:\Repos\Github\SchedulerApp\SchedulerApp\DataAccess\obj\Debug\DataAccess.pdb

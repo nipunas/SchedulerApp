@@ -1,0 +1,11 @@
+﻿<form name="searchUser">
+    <input required type="search" placeholder="Username to find"
+           ng-model="username" />
+    <input type="submit" value="Search"
+           ng-click="search(username)" />
+</form>
+
+<div>
+    <h2>{{user.login}}</h2>
+    <img ng-src="http://www.gravatar.com/avatar/{{user.gravatar_id}}" />
+</div>

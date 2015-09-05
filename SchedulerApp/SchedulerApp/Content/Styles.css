@@ -1,0 +1,34 @@
+﻿body {
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Menu */
+.menu-container{
+    height: 50px;
+    background-color:#f2ebeb;
+}
+
+    .menu-container ul li {
+        padding:5px;
+        margin:10px;
+        display: inline;
+        height:60px;
+        width:120px;
+        background-color:#bac1c6;
+    }
+
+.task-holder {
+    background-color: #f7eebe;
+    border: 1px solid #808080;
+    height: 120px;
+    width: 500px;
+    margin: 10px;
+    padding: 15px;
+}
+
+.task-holder-summary {
+    border:1px solid #5f5858;
+    background:#def2ed;
+    font-size: 15px;
+}
