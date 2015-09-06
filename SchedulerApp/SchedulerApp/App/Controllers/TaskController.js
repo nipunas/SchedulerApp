@@ -2,10 +2,12 @@
 
     var app = angular.module('SchedulerApp');
 
-    var TaskController = function ($scope, HttpService) {
+    var TaskController = function ($scope, HttpService, TaskService) {
 
         var onComplete = function (data) {
-            $scope.tasks = data;
+            TaskService.tasks = data;
+            $scope.tasks = TaskService.tasks;
+            TaskService.tasksLoaded = true;
         },
         search = function () {
             HttpService.getTasks(1)
@@ -27,17 +29,21 @@
             Description: ''
         }
 
+        $scope.tasks = TaskService.tasks;
+
         $scope.addTask = function () {
             var newTask = new task($scope.task);
 
             //We need to push a new task everytime. Otherwise the same task with references
             //will be added each time you press add task
-            $scope.tasks.push(newTask);
+            TaskService.tasks.push(newTask);
         }
 
-        search();
+        if (!TaskService.tasksLoaded) {
+            search();
+        }
     };
 
-    app.controller("TaskController", ["$scope", "HttpService", TaskController]);
+    app.controller("TaskController", ["$scope", "HttpService", "TaskService", TaskController]);
 
 }());

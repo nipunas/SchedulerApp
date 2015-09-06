@@ -1,16 +1,16 @@
-﻿<!--<input class="btn btn-default" type="button" ng-click="search()" value="Get Tasks" />-->
-
-<table class="table">
-    <thead>
-        <tr style="padding:4px 0 4px 0;">
-            <th ng-hide="1">Id</th>
-            <th>Summary</th>
-            <th>Description</th>
+﻿<div>
+    <table class="table">
+        <thead>
+            <tr style="padding:4px 0 4px 0;">
+                <th ng-hide="1">Id</th>
+                <th>Summary</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tr class="task-holder" ng-repeat="task in tasks">
+            <td ng-hide="1">{{ task.Id }}</td>
+            <td>{{ task.Summary }}</td>
+            <td>{{ task.Description }}</td>
         </tr>
-    </thead>
-    <tr class="task-holder" ng-repeat="task in tasks">
-        <td ng-hide="1">{{ task.Id }}</td>
-        <td>{{ task.Summary }}</td>
-        <td>{{ task.Description }}</td>
-    </tr>
-</table>
+    </table>
+</div>

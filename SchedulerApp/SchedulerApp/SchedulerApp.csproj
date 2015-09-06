@@ -80,15 +80,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\Controllers\LoginController.js" />
+    <Content Include="App\index.html" />
     <Content Include="App\app.html" />
     <Content Include="App\app.js" />
     <Content Include="App\Controllers\ControllerFactory.js" />
+    <Content Include="App\Controllers\SettingsController.js" />
     <Content Include="App\Controllers\TaskController.js" />
+    <Content Include="App\Services\AppService.js" />
     <Content Include="App\Services\httpService.js" />
+    <Content Include="App\Services\TaskService.js" />
     <Content Include="App\Shared\Menu\menu.html" />
     <Content Include="App\Models\Task.js" />
+    <Content Include="App\Templates\Home.html" />
+    <Content Include="App\Templates\Settings.html" />
     <Content Include="App\Templates\CreateTask.html" />
     <Content Include="App\Templates\TaskTemplate.html" />
+    <Content Include="App\Templates\User\Login.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />

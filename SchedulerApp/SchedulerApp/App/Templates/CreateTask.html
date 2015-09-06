@@ -1,19 +1,26 @@
-﻿<form id="create-task-form">
-    <div class="form-group">
-        <div class="form-group">
-            <label>Summary</label>
-            <input class="form-control" type="text" ng-model="task.Summary" />
+﻿<div class="panel panel-default task-form col-md-5">
+    <form id="create-task-form">
+        <div class="panel-heading">
+            <h3 class="panel-title">Add New Task</h3>
         </div>
-        <div class="form-group">
-            <label>Description</label>
-            <textarea class="form-control" ng-model="task.Description"></textarea>
-        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label>Summary</label>
+                <input class="form-control" required type="text" ng-model="task.Summary" />
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea class="form-control" required ng-model="task.Description"></textarea>
+            </div>
 
-        <div style="margin: 15px; background-color:#ebe0e0;">
-            <h3>Task Summary is : {{ task.Summary }}</h3>
-            <p>Description is : {{ task.Description }}</p>
-        </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>Task Summary is : {{ task.Summary }}</h3>
+                    <p>Description is : {{ task.Description }}</p>
+                </div>
+            </div>
 
-        <input class="btn btn-default" type="submit" value="Submit" ng-click="addTask()" />
-    </div>
-</form>
+            <input class="btn btn-default" type="submit" value="Submit" ng-click="addTask()" />
+        </div>
+    </form>
+</div>

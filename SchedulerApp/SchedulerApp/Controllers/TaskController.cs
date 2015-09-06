@@ -15,11 +15,11 @@ namespace SchedulerApp.Controllers
         // GET: Tasks
         public JsonResult GetTasks(int id)
         {
-            Task task1 = new Task() { Id = 1, Summary = "Clean the room", Description = "Commanding Officer of the ship, Commander Bill Waters paid a courtesy call on Commander Western Naval Area, Rear Admiral Dayananda Nanayakkara at the Western Naval Command Headquarters in Colombo, Navy headquarters said." };
-            Task task2 = new Task() { Id = 2, Summary = "Sweep the floor", Description = "Use the switch statement to select one of many blocks of code to be executed." };
-            Task task3 = new Task() { Id = 3, Summary = "Do Homework", Description = "When the JavaScript code interpreter reaches a break keyword, it breaks out of the switch block." };
-            Task task4 = new Task() { Id = 2, Summary = "Sweep the floor", Description = "Use the switch statement to select one of many blocks of code to be executed." };
-            Task task5 = new Task() { Id = 3, Summary = "Do Homework", Description = "When the JavaScript code interpreter reaches a break keyword, it breaks out of the switch block." };
+            Task task1 = new Task() { Id = 1, Summary = "Clean the room", Description = "Clean the room" };
+            Task task2 = new Task() { Id = 2, Summary = "Sweep the floor", Description = "Sweep the floor" };
+            Task task3 = new Task() { Id = 3, Summary = "Do Homework", Description = "Do Homework" };
+            Task task4 = new Task() { Id = 2, Summary = "Sweep the floor", Description = "Sweep the floor" };
+            Task task5 = new Task() { Id = 3, Summary = "Do Homework", Description = "Do Homework" };
 
             List<Task> tasks = new List<Task>() { task1, task2, task3, task4, task5 };
 

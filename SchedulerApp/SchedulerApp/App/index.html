@@ -7,23 +7,21 @@
     <script src="../Scripts/angular-route.js"></script>
     <script src="app.js"></script>
     <script src="Controllers/LoginController.js"></script>
-    <script src="Services/AppService.js"></script>
-    <script src="Services/TaskService.js"></script>
-    <script src="Controllers/TaskController.js"></script>
     <script src="Controllers/SettingsController.js"></script>
     <script src="Services/httpService.js"></script>
     <link href="../Content/Styles.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.js"></script>
     <script src="../Scripts/bootstrap.js"></script>
+
     <!-- Bootstrap -->
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
     <link href="../Content/bootstrap-theme.min.css" rel="stylesheet" />
 </head>
 <body ng-app="SchedulerApp">
-    <div ng-include="'Shared/Menu/menu.html'"></div>
-    <div class="container-fluid" ng-controller="HeaderController">
-        <h1>{{title}}</h1>
+    <div class="container">
+        <div style="max-width:350px; margin:0 auto; padding-top:120px;" ng-controller="LoginController">
+            <div ng-include="'Templates/User/Login.html'"></div>
+        </div>
     </div>
-    <div class="container-fluid" ng-view></div>
 </body>
 </html>
