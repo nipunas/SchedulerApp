@@ -1,9 +1,14 @@
 ﻿(function () {
 
-    var httpService = function ($http) {
+    var httpService = function ($http, $location) {
 
         var urlFactory = function (service) {
-            var path = 'http://localhost/SchedulerApp/';
+            var url = $location.protocol() + "://" + $location.host();
+            
+            if (url.indexOf("localhost") > -1) {
+                url = url + '/schedulerapp';
+            }
+            var path = url + '/';
 
             switch (service) {
                 case 'tasks':
