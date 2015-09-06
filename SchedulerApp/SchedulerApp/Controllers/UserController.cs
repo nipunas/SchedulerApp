@@ -15,6 +15,19 @@ namespace SchedulerApp.Controllers
             return View();
         }
 
+        [HttpPost]
+        public JsonResult Login(User user)
+        {
+            if (user.Name == "nipuna" && user.Password == "nipuna")
+            {
+                HttpCookie cookie = new HttpCookie("AppKey", Guid.NewGuid().ToString());
+                Response.Cookies.Add(cookie);
+                return Json(true, JsonRequestBehavior.DenyGet);
+            }
+
+            return Json(false, JsonRequestBehavior.DenyGet);
+        }
+
         public JsonResult GetData()
         {
             User user = new User() { Id = 1, Name = "Nipuna", IsAdmin = true };

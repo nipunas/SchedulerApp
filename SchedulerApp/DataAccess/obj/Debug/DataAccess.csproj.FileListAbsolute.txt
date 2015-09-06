@@ -8,3 +8,4 @@ E:\Repos\Github\scheduler-app\schedulerapp\SchedulerApp\DataAccess\bin\Debug\Dat
 E:\Repos\Github\scheduler-app\schedulerapp\SchedulerApp\DataAccess\bin\Debug\DataAccess.pdb
 E:\Repos\Github\scheduler-app\schedulerapp\SchedulerApp\DataAccess\obj\Debug\DataAccess.dll
 E:\Repos\Github\scheduler-app\schedulerapp\SchedulerApp\DataAccess\obj\Debug\DataAccess.pdb
+E:\Repos\Github\scheduler-app\schedulerapp\SchedulerApp\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache

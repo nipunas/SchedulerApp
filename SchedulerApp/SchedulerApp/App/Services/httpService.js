@@ -8,6 +8,8 @@
             switch (service) {
                 case 'tasks':
                     return path + 'Task/GetTasks';
+                case 'login':
+                    return path + 'User/Login';
                 default:
                     return path + 'Invalid';
             }
@@ -20,8 +22,16 @@
                 });
         };
 
+        var login = function (data) {
+            return $http.post(urlFactory('login'), data)
+                .then(function (response) {
+                    return response.data;
+                });
+        };
+
         return {
-            getTasks: getTasks
+            getTasks: getTasks,
+            login: login
         };
     };
 
