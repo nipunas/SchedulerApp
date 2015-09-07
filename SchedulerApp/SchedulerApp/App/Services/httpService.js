@@ -20,8 +20,8 @@
             }
         }
 
-        var getTasks = function (userId) {
-            return $http.get(urlFactory('tasks') + '/' + userId)
+        var getTasks = function (duration, userId) {
+            return $http.get(urlFactory('tasks') + '/', { params: { "duration": duration, "userId": userId } })
                 .then(function (response) {
                     return response.data;
                 });

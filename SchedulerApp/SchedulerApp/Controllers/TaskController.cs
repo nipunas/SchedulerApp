@@ -13,7 +13,7 @@ namespace SchedulerApp.Controllers
     public class TaskController : Controller
     {
         // GET: Tasks
-        public JsonResult GetTasks(int id)
+        public JsonResult GetTasks(int duration, int userId)
         {
             Task task1 = new Task() { Id = 1, Summary = "Clean the room", Description = "Clean the room" };
             Task task2 = new Task() { Id = 2, Summary = "Sweep the floor", Description = "Sweep the floor" };
@@ -21,7 +21,20 @@ namespace SchedulerApp.Controllers
             Task task4 = new Task() { Id = 2, Summary = "Sweep the floor", Description = "Sweep the floor" };
             Task task5 = new Task() { Id = 3, Summary = "Do Homework", Description = "Do Homework" };
 
-            List<Task> tasks = new List<Task>() { task1, task2, task3, task4, task5 };
+            List<Task> tasks;
+
+            if (duration == 1)
+            {
+                tasks = new List<Task>() { task1, task2, task3, task4, task5 };
+            }
+            else if (duration == 2)
+            {
+                tasks = new List<Task>() { task1, task2 };
+            }
+            else
+            {
+                tasks = new List<Task>() { task2, task3, task4 };
+            }
 
             return Json(tasks, JsonRequestBehavior.AllowGet);
         }

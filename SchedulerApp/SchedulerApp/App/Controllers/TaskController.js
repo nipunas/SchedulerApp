@@ -9,8 +9,20 @@
             $scope.tasks = TaskService.tasks;
             TaskService.tasksLoaded = true;
         },
-        search = function () {
-            HttpService.getTasks(1)
+        getDuration = function (duration) {
+            switch (duration) {
+                case 'today':
+                    return 1;
+                case 'week':
+                    return 2;
+                case 'month':
+                    return 3;
+                default:
+                    return 0;
+            }
+        },
+        search = function (duration) {
+            HttpService.getTasks(getDuration(duration), 1)
             .then(onComplete);
         },
         task = function (model) {
@@ -28,6 +40,20 @@
             Summary: '',
             Description: ''
         }
+
+        $scope.checkModel = {
+            left: false,
+            middle: true,
+            right: false
+        };
+
+        var taskMeta = {};
+        taskMeta.taskDuration = "today";
+
+        $scope.taskMeta = taskMeta;
+        $scope.$watch("taskMeta.taskDuration", function (newDuration, previousDuration) {
+            search(newDuration);
+        }, true);
 
         $scope.tasks = TaskService.tasks;
 
