@@ -30,8 +30,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,13 +51,54 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccessBase.cs" />
+    <Compile Include="DBAccess\SchedulerApp.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SchedulerApp.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBAccess\SchedulerApp.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SchedulerApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBAccess\SchedulerApp.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SchedulerApp.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DBAccess\Task.cs">
+      <DependentUpon>SchedulerApp.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Task.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Operations\TaskOperations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="DBAccess\SchedulerApp.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SchedulerApp.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DBAccess\SchedulerApp.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SchedulerApp.edmx</DependentUpon>
+      <LastGenOutput>SchedulerApp.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DBAccess\SchedulerApp.edmx.diagram">
+      <DependentUpon>SchedulerApp.edmx</DependentUpon>
+    </None>
+    <None Include="DBAccess\SchedulerApp.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SchedulerApp.edmx</DependentUpon>
+      <LastGenOutput>SchedulerApp.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

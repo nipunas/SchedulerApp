@@ -3,11 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using DataAccess.Models;
 using System.Data.SqlClient;
+using DataAccess.DBAccess;
 
 namespace DataAccess.Operations
 {
     public class TaskOperations
     {
+        public List<string> Tasks()
+        {
+            SchedulerAppEntities entities = new SchedulerAppEntities();
+
+            var tasks =  entities.Tasks.ToList().Select(t => t.Summary).ToList();
+
+            return tasks;
+        }
+
         public IEnumerable<string> GetTasks(string conn, int id)
         {
             List<string> data = new List<string>();

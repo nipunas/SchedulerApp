@@ -15,6 +15,9 @@ namespace SchedulerApp.Controllers
         // GET: Tasks
         public JsonResult GetTasks(int duration, int userId)
         {
+            TaskOperations oper = new TaskOperations();
+            var t = oper.Tasks();
+
             Task task1 = new Task() { Id = 1, Summary = "Clean the room", Description = "Clean the room" };
             Task task2 = new Task() { Id = 2, Summary = "Sweep the floor", Description = "Sweep the floor" };
             Task task3 = new Task() { Id = 3, Summary = "Do Homework", Description = "Do Homework" };
