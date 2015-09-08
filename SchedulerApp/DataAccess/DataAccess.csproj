@@ -69,6 +69,7 @@
     <Compile Include="DBAccess\Task.cs">
       <DependentUpon>SchedulerApp.tt</DependentUpon>
     </Compile>
+    <Compile Include="Enums\TaskDuration.cs" />
     <Compile Include="Models\Task.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Operations\TaskOperations.cs" />

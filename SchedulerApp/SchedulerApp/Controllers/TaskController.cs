@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Configuration;
 using DataAccess.Models;
 using DataAccess.Operations;
+using DataAccess.Enums;
 
 namespace SchedulerApp.Controllers
 {
@@ -16,7 +17,7 @@ namespace SchedulerApp.Controllers
         public JsonResult GetTasks(int duration, int userId)
         {
             TaskOperations oper = new TaskOperations();
-            List<TaskModel> tasks = oper.GetTasksFor(duration).ToList();
+            List<TaskModel> tasks = oper.GetTasksFor((TaskDuration)duration).ToList();
 
             return Json(tasks, JsonRequestBehavior.AllowGet);
         }

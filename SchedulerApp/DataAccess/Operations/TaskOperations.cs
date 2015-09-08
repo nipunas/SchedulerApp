@@ -4,16 +4,20 @@ using System.Linq;
 using DataAccess.Models;
 using System.Data.SqlClient;
 using DataAccess.DBAccess;
+using DataAccess.Enums;
 
 namespace DataAccess.Operations
 {
     public class TaskOperations
     {
-        public IEnumerable<TaskModel> GetTasksFor(int duration)
+        public IEnumerable<TaskModel> GetTasksFor(TaskDuration duration)
         {
             SchedulerAppEntities entities = new SchedulerAppEntities();
             IEnumerable<TaskModel> tasks;
-            if (duration == 1)
+
+            DateTime lastDayOfWeek = DateTime.Today.AddDays(7);
+
+            if (duration == TaskDuration.Today)
             {
                 tasks = entities.Tasks.Where(t=> t.DueDate == DateTime.Today).ToList().Select(t => new TaskModel()
                 {
@@ -22,18 +26,20 @@ namespace DataAccess.Operations
                     Description = t.Description
                 }).ToList();
             }
-            else if (duration == 2 || duration == 3)
+            else if (duration == TaskDuration.Week)
             {
-                tasks = entities.Tasks.ToList().Select(t => new TaskModel()
+                tasks = entities.Tasks
+                    .Where(t => t.DueDate >= DateTime.Today && t.DueDate <= lastDayOfWeek)
+                    .ToList().Select(t => new TaskModel()
                 {
                     Id = t.TaskId,
                     Summary = t.Summary,
                     Description = t.Description
                 }).ToList();
             }
-            else
+            else //Month
             {
-                tasks = entities.Tasks.Where(t => t.DueDate > DateTime.Today).ToList().Select(t => new TaskModel()
+                tasks = entities.Tasks.Where(t => t.DueDate.Value.Month == DateTime.Today.Month).ToList().Select(t => new TaskModel()
                 {
                     Id = t.TaskId,
                     Summary = t.Summary,
