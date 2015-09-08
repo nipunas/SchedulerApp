@@ -17,5 +17,6 @@ namespace DataAccess.DBAccess
         public int TaskId { get; set; }
         public string Summary { get; set; }
         public string Description { get; set; }
+        public Nullable<System.DateTime> DueDate { get; set; }
     }
 }

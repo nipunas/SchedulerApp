@@ -16,28 +16,7 @@ namespace SchedulerApp.Controllers
         public JsonResult GetTasks(int duration, int userId)
         {
             TaskOperations oper = new TaskOperations();
-            var t = oper.Tasks();
-
-            Task task1 = new Task() { Id = 1, Summary = "Clean the room", Description = "Clean the room" };
-            Task task2 = new Task() { Id = 2, Summary = "Sweep the floor", Description = "Sweep the floor" };
-            Task task3 = new Task() { Id = 3, Summary = "Do Homework", Description = "Do Homework" };
-            Task task4 = new Task() { Id = 2, Summary = "Sweep the floor", Description = "Sweep the floor" };
-            Task task5 = new Task() { Id = 3, Summary = "Do Homework", Description = "Do Homework" };
-
-            List<Task> tasks;
-
-            if (duration == 1)
-            {
-                tasks = new List<Task>() { task1, task2, task3, task4, task5 };
-            }
-            else if (duration == 2)
-            {
-                tasks = new List<Task>() { task1, task2 };
-            }
-            else
-            {
-                tasks = new List<Task>() { task2, task3, task4 };
-            }
+            List<TaskModel> tasks = oper.GetTasksFor(duration).ToList();
 
             return Json(tasks, JsonRequestBehavior.AllowGet);
         }

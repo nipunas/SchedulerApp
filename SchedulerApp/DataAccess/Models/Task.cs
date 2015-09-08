@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DataAccess.Models
 {
-    public class Task
+    public class TaskModel
     {
         public int Id { get; set; }
         public string Summary { get; set; }

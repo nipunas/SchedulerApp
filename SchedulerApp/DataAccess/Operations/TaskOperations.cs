@@ -9,11 +9,37 @@ namespace DataAccess.Operations
 {
     public class TaskOperations
     {
-        public List<string> Tasks()
+        public IEnumerable<TaskModel> GetTasksFor(int duration)
         {
             SchedulerAppEntities entities = new SchedulerAppEntities();
-
-            var tasks =  entities.Tasks.ToList().Select(t => t.Summary).ToList();
+            IEnumerable<TaskModel> tasks;
+            if (duration == 1)
+            {
+                tasks = entities.Tasks.Where(t=> t.DueDate == DateTime.Today).ToList().Select(t => new TaskModel()
+                {
+                    Id = t.TaskId,
+                    Summary = t.Summary,
+                    Description = t.Description
+                }).ToList();
+            }
+            else if (duration == 2 || duration == 3)
+            {
+                tasks = entities.Tasks.ToList().Select(t => new TaskModel()
+                {
+                    Id = t.TaskId,
+                    Summary = t.Summary,
+                    Description = t.Description
+                }).ToList();
+            }
+            else
+            {
+                tasks = entities.Tasks.Where(t => t.DueDate > DateTime.Today).ToList().Select(t => new TaskModel()
+                {
+                    Id = t.TaskId,
+                    Summary = t.Summary,
+                    Description = t.Description
+                }).ToList();
+            }
 
             return tasks;
         }
