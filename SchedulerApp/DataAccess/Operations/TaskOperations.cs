@@ -13,7 +13,7 @@ namespace DataAccess.Operations
         public IEnumerable<TaskModel> GetTasksFor(TaskDuration duration)
         {
             SchedulerAppEntities entities = new SchedulerAppEntities();
-            IEnumerable<TaskModel> tasks;
+            List<TaskModel> tasks;
 
             DateTime lastDayOfWeek = DateTime.Today.AddDays(7);
 
@@ -47,7 +47,31 @@ namespace DataAccess.Operations
                 }).ToList();
             }
 
+            //Add tasks without dueDate regardless of the filter
+            List<TaskModel> tasksWithoutDueDate = entities.Tasks.Where(t => t.DueDate == null).ToList()
+                .Select(t => new TaskModel()
+                {
+                    Id = t.TaskId,
+                    Summary = t.Summary,
+                    Description = t.Description
+                }).ToList();
+
+            tasks.AddRange(tasksWithoutDueDate);
+
             return tasks;
+        }
+
+        public void CreateTask(TaskModel taskModel)
+        {
+            Task task = new Task();
+            task.Summary = taskModel.Summary;
+            task.Description = taskModel.Description;
+
+            SchedulerAppEntities entities = new SchedulerAppEntities();
+            entities.Tasks.Add(task);
+            entities.SaveChanges();
+
+            int taskId = task.TaskId;
         }
 
         public IEnumerable<string> GetTasks(string conn, int id)

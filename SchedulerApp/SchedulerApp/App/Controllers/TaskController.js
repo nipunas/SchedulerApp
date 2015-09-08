@@ -33,6 +33,9 @@
             item.Description = model.Description;
 
             return item;
+        },
+        onTaskCreationComplete = function (response) {
+            //TODO:
         };
 
         $scope.task = {
@@ -59,6 +62,9 @@
 
         $scope.addTask = function () {
             var newTask = new task($scope.task);
+
+            HttpService.createTask(newTask)
+                .then(onTaskCreationComplete);
 
             //We need to push a new task everytime. Otherwise the same task with references
             //will be added each time you press add task

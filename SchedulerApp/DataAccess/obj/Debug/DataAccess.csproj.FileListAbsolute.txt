@@ -12,3 +12,4 @@ E:\Repos\Github\scheduler-app\schedulerapp\SchedulerApp\DataAccess\bin\Debug\Ent
 E:\Repos\Github\scheduler-app\schedulerapp\SchedulerApp\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
 E:\Repos\Github\scheduler-app\schedulerapp\SchedulerApp\DataAccess\obj\Debug\DataAccess.dll
 E:\Repos\Github\scheduler-app\schedulerapp\SchedulerApp\DataAccess\obj\Debug\DataAccess.pdb
+E:\Repos\Github\scheduler-app\schedulerapp\SchedulerApp\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache

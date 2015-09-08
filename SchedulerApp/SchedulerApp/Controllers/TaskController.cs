@@ -22,6 +22,12 @@ namespace SchedulerApp.Controllers
             return Json(tasks, JsonRequestBehavior.AllowGet);
         }
 
+        public void CreateTask(TaskModel task)
+        {
+            TaskOperations oper = new TaskOperations();
+            oper.CreateTask(task);
+        }
+
         public JsonResult GetData()
         {
             string connectionString = ConfigurationManager.ConnectionStrings["myConnString"].ConnectionString;

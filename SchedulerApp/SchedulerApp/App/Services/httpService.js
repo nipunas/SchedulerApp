@@ -4,7 +4,7 @@
 
         var urlFactory = function (service) {
             var url = $location.protocol() + "://" + $location.host();
-            
+
             if (url.indexOf("localhost") > -1) {
                 url = url + '/schedulerapp';
             }
@@ -13,6 +13,8 @@
             switch (service) {
                 case 'tasks':
                     return path + 'Task/GetTasks';
+                case 'createTask':
+                    return path + 'Task/CreateTask';
                 case 'login':
                     return path + 'User/Login';
                 default:
@@ -27,6 +29,13 @@
                 });
         };
 
+        var createTask = function (task) {
+            return $http.post(urlFactory('createTask'), task)
+                .then(function (response) {
+                    return response.data;
+                });
+        };
+
         var login = function (data) {
             return $http.post(urlFactory('login'), data)
                 .then(function (response) {
@@ -36,6 +45,7 @@
 
         return {
             getTasks: getTasks,
+            createTask: createTask,
             login: login
         };
     };
