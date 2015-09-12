@@ -31,6 +31,7 @@
             item.Id = model.Id;
             item.Summary = model.Summary;
             item.Description = model.Description;
+            item.Completed = model.Completed
 
             return item;
         },
@@ -41,7 +42,8 @@
         $scope.task = {
             Id: -1,
             Summary: '',
-            Description: ''
+            Description: '',
+            Completed: false
         }
 
         $scope.checkModel = {

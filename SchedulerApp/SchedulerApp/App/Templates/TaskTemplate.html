@@ -23,12 +23,14 @@
                 <th ng-hide="1">Id</th>
                 <th>Summary</th>
                 <th>Description</th>
+                <th>Complete Task</th>
             </tr>
         </thead>
         <tr class="task-holder" ng-repeat="task in tasks">
             <td ng-hide="1">{{ task.Id }}</td>
             <td>{{ task.Summary }}</td>
             <td>{{ task.Description }}</td>
+            <td><input type="checkbox" ng-model="task.Completed" /></td>
         </tr>
     </table>
 </div>
