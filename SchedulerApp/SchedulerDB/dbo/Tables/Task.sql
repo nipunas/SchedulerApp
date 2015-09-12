@@ -3,6 +3,9 @@
     [Summary]     NVARCHAR (200) NOT NULL,
     [Description] NVARCHAR (MAX) NULL,
     [DueDate]     DATETIME2 (7)  NULL,
+    [Completed]   BIT            NULL,
     CONSTRAINT [PK_Task] PRIMARY KEY CLUSTERED ([TaskId] ASC)
 );
+
+
 
