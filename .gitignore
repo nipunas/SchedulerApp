@@ -10,3 +10,5 @@
 packages/
 *.nupkg
 *.FileListAbsolute.txt
+*.sqlproj.user
+*.sln
