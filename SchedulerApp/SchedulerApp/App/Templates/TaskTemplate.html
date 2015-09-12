@@ -24,13 +24,19 @@
                 <th>Summary</th>
                 <th>Description</th>
                 <th>Complete Task</th>
+                <th>Completed</th>
             </tr>
         </thead>
         <tr class="task-holder" ng-repeat="task in tasks">
             <td ng-hide="1">{{ task.Id }}</td>
-            <td>{{ task.Summary }}</td>
-            <td>{{ task.Description }}</td>
+            
+            <td ng-class="{'strike-task': task.Completed}">{{ task.Summary }}</td>
+            
+            <td ng-class="{'strike-task': task.Completed}">{{ task.Description }}</td>
+            
             <td><input type="checkbox" ng-model="task.Completed" /></td>
+            
+            <td>{{ task.Completed }}</td>
         </tr>
     </table>
 </div>

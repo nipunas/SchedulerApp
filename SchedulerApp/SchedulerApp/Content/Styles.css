@@ -29,6 +29,10 @@
     padding:25px;
 }
 
+.strike-task {
+    text-decoration: line-through;
+}
+
 .form-holder {
     width: 500px;
     margin: 15px;
