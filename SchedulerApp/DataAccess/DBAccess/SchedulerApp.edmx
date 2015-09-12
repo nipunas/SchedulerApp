@@ -13,6 +13,7 @@
           <Property Name="Summary" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="Description" Type="nvarchar(max)" />
           <Property Name="DueDate" Type="datetime2" Precision="7" />
+          <Property Name="Completed" Type="bit" />
         </EntityType>
         <EntityContainer Name="SchedulerAppModelStoreContainer">
           <EntitySet Name="Task" EntityType="Self.Task" Schema="dbo" store:Type="Tables" />
@@ -29,6 +30,7 @@
           <Property Name="Summary" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="DueDate" Type="DateTime" Precision="7" />
+          <Property Name="Completed" Type="Boolean" />
         </EntityType>
         <EntityContainer Name="SchedulerAppEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Tasks" EntityType="Self.Task" />
@@ -42,6 +44,7 @@
           <EntitySetMapping Name="Tasks">
             <EntityTypeMapping TypeName="SchedulerAppModel.Task">
               <MappingFragment StoreEntitySet="Task">
+                <ScalarProperty Name="Completed" ColumnName="Completed" />
                 <ScalarProperty Name="DueDate" ColumnName="DueDate" />
                 <ScalarProperty Name="TaskId" ColumnName="TaskId" />
                 <ScalarProperty Name="Summary" ColumnName="Summary" />

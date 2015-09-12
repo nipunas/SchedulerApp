@@ -18,5 +18,6 @@ namespace DataAccess.DBAccess
         public string Summary { get; set; }
         public string Description { get; set; }
         public Nullable<System.DateTime> DueDate { get; set; }
+        public Nullable<bool> Completed { get; set; }
     }
 }
