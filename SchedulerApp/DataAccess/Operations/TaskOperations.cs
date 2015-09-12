@@ -23,7 +23,8 @@ namespace DataAccess.Operations
                 {
                     Id = t.TaskId,
                     Summary = t.Summary,
-                    Description = t.Description
+                    Description = t.Description,
+                    Completed = t.Completed
                 }).ToList();
             }
             else if (duration == TaskDuration.Week)
@@ -34,7 +35,8 @@ namespace DataAccess.Operations
                 {
                     Id = t.TaskId,
                     Summary = t.Summary,
-                    Description = t.Description
+                    Description = t.Description,
+                    Completed = t.Completed
                 }).ToList();
             }
             else //Month
@@ -43,7 +45,8 @@ namespace DataAccess.Operations
                 {
                     Id = t.TaskId,
                     Summary = t.Summary,
-                    Description = t.Description
+                    Description = t.Description,
+                    Completed = t.Completed
                 }).ToList();
             }
 
@@ -53,7 +56,8 @@ namespace DataAccess.Operations
                 {
                     Id = t.TaskId,
                     Summary = t.Summary,
-                    Description = t.Description
+                    Description = t.Description,
+                    Completed = t.Completed
                 }).ToList();
 
             tasks.AddRange(tasksWithoutDueDate);
@@ -66,6 +70,7 @@ namespace DataAccess.Operations
             Task task = new Task();
             task.Summary = taskModel.Summary;
             task.Description = taskModel.Description;
+            task.Completed = taskModel.Completed;
 
             SchedulerAppEntities entities = new SchedulerAppEntities();
             entities.Tasks.Add(task);
