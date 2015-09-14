@@ -16,7 +16,7 @@
         })
         .when('/addTask', {
             templateUrl: "Templates/CreateTask.html",
-            controller: "TaskController"
+            controller: "AddEditTaskController"
         })
         .when('/settings', {
             templateUrl: "Templates/Settings.html",
