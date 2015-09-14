@@ -93,7 +93,7 @@
     <Content Include="App\app.js" />
     <Content Include="App\Controllers\ControllerFactory.js" />
     <Content Include="App\Controllers\SettingsController.js" />
-    <Content Include="App\Controllers\TaskController.js" />
+    <Content Include="App\Controllers\TaskControllers.js" />
     <Content Include="App\Services\AppService.js" />
     <Content Include="App\Services\httpService.js" />
     <Content Include="App\Services\TaskService.js" />
