@@ -23,8 +23,8 @@
                 <th ng-hide="1">Id</th>
                 <th>Summary</th>
                 <th>Description</th>
-                <th>Complete Task</th>
-                <th>Completed</th>
+                <th>Complete</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tr class="task-holder" ng-repeat="task in tasks">
@@ -36,7 +36,7 @@
             
             <td><input type="checkbox" ng-model="task.Completed" /></td>
             
-            <td>{{ task.Completed }}</td>
+            <td><span ng-click="deleteTask(task.Id)" class="glyphicon glyphicon-trash" style="cursor: pointer;"></span></td>
         </tr>
     </table>
 </div>

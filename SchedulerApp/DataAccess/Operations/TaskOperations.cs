@@ -8,11 +8,10 @@ using DataAccess.Enums;
 
 namespace DataAccess.Operations
 {
-    public class TaskOperations
+    public class TaskOperations : Base
     {
         public IEnumerable<TaskModel> GetTasksFor(TaskDuration duration)
         {
-            SchedulerAppEntities entities = new SchedulerAppEntities();
             List<TaskModel> tasks;
 
             DateTime lastDayOfWeek = DateTime.Today.AddDays(7);
@@ -77,6 +76,15 @@ namespace DataAccess.Operations
             entities.SaveChanges();
 
             int taskId = task.TaskId;
+        }
+
+        public void DeleteTask(int id)
+        {
+            SchedulerAppEntities entities = new SchedulerAppEntities();
+
+            Task task = entities.Tasks.First(t => t.TaskId == id);
+            entities.Tasks.Remove(task);
+            entities.SaveChanges();
         }
 
         public IEnumerable<string> GetTasks(string conn, int id)

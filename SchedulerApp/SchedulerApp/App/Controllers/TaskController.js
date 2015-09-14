@@ -2,7 +2,7 @@
 
     var app = angular.module('SchedulerApp');
 
-    var TaskController = function ($scope, HttpService, TaskService) {
+    var TaskController = function ($scope, $filter, HttpService, TaskService) {
 
         var onComplete = function (data) {
             TaskService.tasks = data;
@@ -39,6 +39,10 @@
             //TODO:
         };
 
+        onTaskDeletionComplete = function (response) {
+            //TODO:
+        };
+
         $scope.task = {
             Id: -1,
             Summary: '',
@@ -56,6 +60,7 @@
         taskMeta.taskDuration = "today";
 
         $scope.taskMeta = taskMeta;
+
         $scope.$watch("taskMeta.taskDuration", function (newDuration, previousDuration) {
             search(newDuration);
         }, true);
@@ -73,11 +78,25 @@
             TaskService.tasks.push(newTask);
         }
 
+        $scope.deleteTask = function (taskId) {
+            var item = $filter('filter')($scope.tasks, { Id: taskId }, true);
+            if (item.length === 1) {
+                var itemIndex = $scope.tasks.indexOf(item[0]);
+                $scope.tasks.splice(itemIndex, 1);
+
+                HttpService.deleteTask(item[0].Id)
+                .then(onTaskDeletionComplete);
+            }
+            else {
+                //Error
+            }
+        }
+
         if (!TaskService.tasksLoaded) {
             search();
         }
     };
 
-    app.controller("TaskController", ["$scope", "HttpService", "TaskService", TaskController]);
+    app.controller("TaskController", ["$scope", "$filter", "HttpService", "TaskService", TaskController]);
 
 }());

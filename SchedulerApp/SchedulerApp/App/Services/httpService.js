@@ -17,6 +17,10 @@
                     return path + 'Task/CreateTask';
                 case 'login':
                     return path + 'User/Login';
+                case 'deleteTask':
+                    return path + 'Task/DeleteTask';
+                case 'completeTask':
+                    return path + 'Task/CompleteTask';
                 default:
                     return path + 'Invalid';
             }
@@ -24,6 +28,20 @@
 
         var getTasks = function (duration, userId) {
             return $http.get(urlFactory('tasks') + '/', { params: { "duration": duration, "userId": userId } })
+                .then(function (response) {
+                    return response.data;
+                });
+        };
+
+        var deleteTask = function (taskId) {
+            return $http.post(urlFactory('deleteTask'), { "id": taskId })
+                .then(function (response) {
+                    return response.data;
+                });
+        };
+
+        var completeTask = function (task) {
+            return $http.post(urlFactory('completeTask'), task)
                 .then(function (response) {
                     return response.data;
                 });
@@ -46,6 +64,8 @@
         return {
             getTasks: getTasks,
             createTask: createTask,
+            completeTask: completeTask,
+            deleteTask : deleteTask,
             login: login
         };
     };

@@ -28,6 +28,12 @@ namespace SchedulerApp.Controllers
             oper.CreateTask(task);
         }
 
+        public void DeleteTask(int id)
+        {
+            TaskOperations oper = new TaskOperations();
+            oper.DeleteTask(id);
+        }
+
         public JsonResult GetData()
         {
             string connectionString = ConfigurationManager.ConnectionStrings["myConnString"].ConnectionString;
