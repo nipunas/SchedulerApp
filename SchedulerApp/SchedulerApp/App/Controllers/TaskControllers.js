@@ -17,6 +17,18 @@
             search(newDuration);
         }, true);
 
+        $scope.$watch("tasks", function (newObject, oldObject) {
+            if (newObject === undefined || oldObject === undefined)
+                return;
+
+            var newState = newObject[0].Completed;
+
+            TaskService.changeTaskStatus(newObject[0].Id, newState, function (data) {
+
+            });
+
+        },true);
+
         $scope.deleteTask = function (taskId) {
             TaskService.deleteTask(taskId, function () {
                 var item = $filter('filter')($scope.tasks, { Id: taskId }, true);

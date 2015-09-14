@@ -107,5 +107,12 @@ namespace DataAccess.Operations
             return data;
 
         }
+
+        public void ChangeTaskStatus(int id, bool newState)
+        {
+            Task task = entities.Tasks.First(t => t.TaskId == id);
+            task.Completed = newState;
+            entities.SaveChanges();
+        }
     }
 }

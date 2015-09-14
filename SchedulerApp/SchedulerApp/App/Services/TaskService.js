@@ -23,9 +23,6 @@
             Description: '',
             Completed: false
         },
-        onTaskDeletionComplete = function (response) {
-            //TODO:
-        },
         taskModel = function (model) {
 
             var item = {};
@@ -50,6 +47,9 @@
             HttpService.deleteTask(taskId)
             .then(callback);
         },
+        changeTaskStatus = function (taskId, status) {
+            HttpService.changeTaskStatus({ id: taskId, newState: status })
+        },
         getTasks = function (duration, userId, callback) {
             HttpService.getTasks(getDuration(duration), userId)
             .then(callback);
@@ -60,6 +60,7 @@
             tasksLoaded: false,
             addTask: addTask,
             deleteTask: deleteTask,
+            changeTaskStatus: changeTaskStatus,
             getTasks: getTasks
         };
 

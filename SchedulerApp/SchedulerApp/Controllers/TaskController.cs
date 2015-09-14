@@ -13,10 +13,11 @@ namespace SchedulerApp.Controllers
 {
     public class TaskController : Controller
     {
+        readonly TaskOperations oper = new TaskOperations();
+
         // GET: Tasks
         public JsonResult GetTasks(int duration, int userId)
         {
-            TaskOperations oper = new TaskOperations();
             List<TaskModel> tasks = oper.GetTasksFor((TaskDuration)duration).ToList();
 
             return Json(tasks, JsonRequestBehavior.AllowGet);
@@ -24,14 +25,17 @@ namespace SchedulerApp.Controllers
 
         public void CreateTask(TaskModel task)
         {
-            TaskOperations oper = new TaskOperations();
             oper.CreateTask(task);
         }
 
         public void DeleteTask(int id)
         {
-            TaskOperations oper = new TaskOperations();
             oper.DeleteTask(id);
+        }
+
+        public void ChangeTaskStatus(int id, bool newState)
+        {
+            oper.ChangeTaskStatus(id, newState);
         }
 
         public JsonResult GetData()

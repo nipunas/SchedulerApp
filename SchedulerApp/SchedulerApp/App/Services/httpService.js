@@ -19,8 +19,8 @@
                     return path + 'User/Login';
                 case 'deleteTask':
                     return path + 'Task/DeleteTask';
-                case 'completeTask':
-                    return path + 'Task/CompleteTask';
+                case 'changeTaskStatus':
+                    return path + 'Task/ChangeTaskStatus';
                 default:
                     return path + 'Invalid';
             }
@@ -40,8 +40,8 @@
                 });
         };
 
-        var completeTask = function (task) {
-            return $http.post(urlFactory('completeTask'), task)
+        var changeTaskStatus = function (params) {
+            return $http.post(urlFactory('changeTaskStatus'), params)
                 .then(function (response) {
                     return response.data;
                 });
@@ -64,7 +64,7 @@
         return {
             getTasks: getTasks,
             createTask: createTask,
-            completeTask: completeTask,
+            changeTaskStatus: changeTaskStatus,
             deleteTask : deleteTask,
             login: login
         };
