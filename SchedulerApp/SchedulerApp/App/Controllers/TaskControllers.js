@@ -3,6 +3,8 @@
     var ListTaskController = function ($scope, $filter, TaskService) {
 
         var taskMeta = {};
+        taskMeta.taskDuration = "today";
+        $scope.taskMeta = taskMeta;
 
         var search = function () {
             var userId = 1;
@@ -11,19 +13,9 @@
             });
         };
 
-        //$scope.checkModel = {
-        //    left: false,
-        //    middle: true,
-        //    right: false
-        //};
-
-        taskMeta.taskDuration = "today";
-        $scope.taskMeta = taskMeta;
-
         $scope.$watch("taskMeta.taskDuration", function (newDuration, previousDuration) {
             search(newDuration);
         }, true);
-
 
         $scope.deleteTask = function (taskId) {
             TaskService.deleteTask(taskId, function () {
@@ -47,7 +39,6 @@
     module.controller("ListTaskController", ListTaskController);
 
     module.controller('AddEditTaskController', function ($scope, TaskService, $location) {
-
         $scope.task = {
             Id: -1,
             Summary: '',
