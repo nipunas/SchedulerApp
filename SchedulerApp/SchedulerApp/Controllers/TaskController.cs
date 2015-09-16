@@ -42,8 +42,6 @@ namespace SchedulerApp.Controllers
         {
             string connectionString = ConfigurationManager.ConnectionStrings["myConnString"].ConnectionString;
             string sqlCommand = "SELECT * FROM Employee";
-
-
             TaskOperations operation = new TaskOperations();
 
             List<string> data = new List<string>();
