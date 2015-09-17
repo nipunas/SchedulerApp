@@ -37,7 +37,7 @@
                     $scope.tasks.splice(itemIndex, 1);
                 }
                 else {
-                    //Error
+
                 }
             });
         } ;

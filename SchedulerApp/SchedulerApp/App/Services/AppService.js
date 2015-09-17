@@ -3,8 +3,7 @@
 
     module.factory('AppService', function () {
         var loggedIn = false,
-            username = '',
-            userRoles = [];
+            username = '';
 
         return {
             loggedIn: loggedIn,
