@@ -114,5 +114,24 @@ namespace DataAccess.Operations
             task.Completed = newState;
             entities.SaveChanges();
         }
+
+        public TaskModel GetTask(int taskId, int userId)
+        {
+            return entities.Tasks.First(t => t.TaskId == taskId).ToTaskModel();
+        }
+    }
+
+    public static class TaskOperationMappers
+    {
+        public static TaskModel ToTaskModel(this Task task)
+        {
+            return new TaskModel
+            {
+                Id = task.TaskId,
+                Summary = task.Summary,
+                Description = task.Description,
+                Completed = task.Completed
+            };
+        }
     }
 }

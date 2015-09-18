@@ -23,6 +23,11 @@ namespace SchedulerApp.Controllers
             return Json(tasks, JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult GetTask(int taskId, int userId)
+        {
+            return Json(oper.GetTask(taskId, userId), JsonRequestBehavior.AllowGet);
+        }
+
         public void CreateTask(TaskModel task)
         {
             oper.CreateTask(task);
