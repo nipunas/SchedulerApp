@@ -56,7 +56,7 @@
             Summary: '',
             Description: '',
             Completed: false,
-            DueDate: '01/01/2014'
+            DueDate: new Date()
         };
 
         $scope.addTask = function (taskData) {
