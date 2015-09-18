@@ -53,6 +53,10 @@
         getTasks = function (duration, userId, callback) {
             HttpService.getTasks(getDuration(duration), userId)
             .then(callback);
+        },
+        getTask = function (taskId, userId, callback) {
+            HttpService.getTask(taskId, userId)
+            .then(callback);
         };
 
         return {
@@ -61,7 +65,8 @@
             addTask: addTask,
             deleteTask: deleteTask,
             changeTaskStatus: changeTaskStatus,
-            getTasks: getTasks
+            getTasks: getTasks,
+            getTask: getTask
         };
 
     });

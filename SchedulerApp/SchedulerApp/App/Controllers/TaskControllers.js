@@ -55,7 +55,7 @@
     var module = angular.module('SchedulerApp');
     module.controller("ListTaskController", ListTaskController);
 
-    module.controller('AddEditTaskController', function ($scope, TaskService, $location) {
+    module.controller('AddEditTaskController', function ($scope, TaskService, $location, $routeParams) {
         $scope.task = {
             Id: -1,
             Summary: '',
@@ -69,6 +69,17 @@
                 $location.path('/');
             })
         };
+
+        //Editing a task
+        if ($routeParams.taskId !== undefined) {
+            TaskService.getTask($routeParams.taskId, 1, function (response) {
+                $scope.task.Id = response.Id;
+                $scope.task.Summary = response.Summary;
+                $scope.task.Description = response.Description;
+                $scope.task.Completed = response.Completed;
+                $scope.task.DueDate = new Date(parseInt(response.DueDate.replace('/Date(', '')));;
+            });
+        }
 
         //Can also do 
         //http://stackoverflow.com/questions/18144142/jquery-ui-datepicker-with-angularjs

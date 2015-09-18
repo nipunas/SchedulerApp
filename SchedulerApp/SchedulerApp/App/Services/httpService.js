@@ -13,6 +13,8 @@
             switch (service) {
                 case 'tasks':
                     return path + 'Task/GetTasks';
+                case 'getTask':
+                    return path + 'Task/GetTask';
                 case 'createTask':
                     return path + 'Task/CreateTask';
                 case 'login':
@@ -28,6 +30,13 @@
 
         var getTasks = function (duration, userId) {
             return $http.get(urlFactory('tasks') + '/', { params: { "duration": duration, "userId": userId } })
+                .then(function (response) {
+                    return response.data;
+                });
+        };
+
+        var getTask = function (taskId, userId) {
+            return $http.get(urlFactory('getTask') + '/', { params: { "taskId": taskId, "userId": userId } })
                 .then(function (response) {
                     return response.data;
                 });
@@ -63,6 +72,7 @@
 
         return {
             getTasks: getTasks,
+            getTask: getTask,
             createTask: createTask,
             changeTaskStatus: changeTaskStatus,
             deleteTask : deleteTask,
