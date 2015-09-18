@@ -23,7 +23,7 @@
                 <div class="panel-body">
                     <h3>Task Summary is : {{ task.Summary }}</h3>
                     <p>Description is : {{ task.Description }}</p>
-                    <p>Due Date is : {{task.DueDate }}</p>
+                    <p>Due Date is : {{task.DueDate | date:'yyyy-MM-dd'}}</p>
                 </div>
             </div>
             
