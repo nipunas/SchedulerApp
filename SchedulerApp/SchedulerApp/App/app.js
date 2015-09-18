@@ -18,6 +18,10 @@
             templateUrl: "Templates/CreateTask.html",
             controller: "AddEditTaskController"
         })
+        .when('/editTask/:taskId', {
+            templateUrl: "Templates/CreateTask.html",
+            controller: "AddEditTaskController"
+        })
         .when('/settings', {
             templateUrl: "Templates/Settings.html",
             controller: "SettingsController"

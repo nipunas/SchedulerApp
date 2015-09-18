@@ -1,6 +1,6 @@
 ﻿(function () {
 
-    var ListTaskController = function ($scope, $filter, TaskService) {
+    var ListTaskController = function ($scope, $filter, $location, TaskService) {
 
         var taskMeta = {};
         taskMeta.taskDuration = "today";
@@ -40,7 +40,12 @@
 
                 }
             });
-        } ;
+        };
+
+        $scope.editTask = function (taskId) {
+            $location.path('/editTask/' + taskId);
+            //$location.path('/editTask/').search({ taskId: taskId });
+        };
 
         if (!TaskService.tasksLoaded) {
             search();

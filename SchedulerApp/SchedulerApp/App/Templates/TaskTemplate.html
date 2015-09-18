@@ -23,6 +23,7 @@
                 <th ng-hide="1">Id</th>
                 <th>Summary</th>
                 <th>Description</th>
+                <th>Edit</th>
                 <th>Complete</th>
                 <th>Delete</th>
             </tr>
@@ -34,6 +35,8 @@
             
             <td ng-class="{'strike-task': task.Completed}">{{ task.Description }}</td>
             
+            <td><span ng-click="editTask(task.Id)" class="glyphicon glyphicon-edit" style="cursor: pointer;"></span></td>
+
             <td><input type="checkbox" ng-model="task.Completed" /></td>
             
             <td><span ng-click="deleteTask(task.Id)" class="glyphicon glyphicon-trash" style="cursor: pointer;"></span></td>
