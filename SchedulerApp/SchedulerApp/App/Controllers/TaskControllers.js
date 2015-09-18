@@ -55,7 +55,8 @@
             Id: -1,
             Summary: '',
             Description: '',
-            Completed: false
+            Completed: false,
+            DueDate: '01/01/2014'
         };
 
         $scope.addTask = function (taskData) {
@@ -63,6 +64,13 @@
                 $location.path('/');
             })
         };
+
+        //Can also do 
+        //http://stackoverflow.com/questions/18144142/jquery-ui-datepicker-with-angularjs
+        $(function () {
+            $(".datepicker").datepicker();
+        });
+
     });
 
 }());
