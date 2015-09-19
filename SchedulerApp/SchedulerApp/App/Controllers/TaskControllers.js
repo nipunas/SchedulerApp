@@ -65,9 +65,13 @@
         };
 
         $scope.addTask = function (taskData) {
-            TaskService.addTask(taskData, function (response) {
-                $location.path('/');
-            })
+            //Don't add a new task if task exists
+            if (taskData.Id === -1) {
+                TaskService.addTask(taskData, function (response) {
+                    $location.path('/');
+                });
+            }
+            $location.path('/');
         };
 
         //Editing a task
