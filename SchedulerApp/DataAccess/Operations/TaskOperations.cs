@@ -78,6 +78,11 @@ namespace DataAccess.Operations
             int taskId = task.TaskId;
         }
 
+        public int AddEditTask(TaskModel taskModel)
+        {
+            return 1;
+        }
+
         public void DeleteTask(int id)
         {
             SchedulerAppEntities entities = new SchedulerAppEntities();
