@@ -33,13 +33,13 @@ namespace SchedulerApp.Controllers
         [HttpPost]
         public JsonResult CreateTask(TaskModel task)
         {
-            return Json(oper.AddEditTask(task), JsonRequestBehavior.DenyGet);
+            return Json(oper.AddEditTask(task, HttpUserData.Get().Id), JsonRequestBehavior.DenyGet);
         }
 
         [HttpPost]
         public JsonResult EditTask(TaskModel task)
         {
-            return Json(oper.AddEditTask(task), JsonRequestBehavior.DenyGet);
+            return Json(oper.AddEditTask(task, HttpUserData.Get().Id), JsonRequestBehavior.DenyGet);
         }
 
         public void DeleteTask(int id)

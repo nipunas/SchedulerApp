@@ -60,12 +60,12 @@
         changeTaskStatus = function (taskId, status) {
             HttpService.changeTaskStatus({ id: taskId, newState: status })
         },
-        getTasks = function (duration, userId, callback) {
-            HttpService.getTasks(getDuration(duration), userId)
+        getTasks = function (duration, callback) {
+            HttpService.getTasks(getDuration(duration))
             .then(callback);
         },
-        getTask = function (taskId, userId, callback) {
-            HttpService.getTask(taskId, userId)
+        getTask = function (taskId, callback) {
+            HttpService.getTask(taskId)
             .then(callback);
         };
 

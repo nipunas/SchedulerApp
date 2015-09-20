@@ -12,5 +12,6 @@ namespace DataAccess.Models
         public DateTime DueDate { get; set; }
         public IEnumerable<UserModel> Assignees { get; set; }
         public bool? IsArchived { get; set; }
+        public int CreatedUserId { get; set; }
     }
 }

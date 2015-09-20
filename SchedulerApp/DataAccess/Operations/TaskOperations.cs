@@ -70,6 +70,7 @@ namespace DataAccess.Operations
             task.Summary = taskModel.Summary;
             task.Description = taskModel.Description;
             task.Completed = taskModel.Completed;
+            task.CreatedUserId = taskModel.CreatedUserId;
 
             entities.Tasks.Add(task);
             entities.SaveChanges();
@@ -77,8 +78,10 @@ namespace DataAccess.Operations
             return task.TaskId;
         }
 
-        public int AddEditTask(TaskModel taskModel)
+        public int AddEditTask(TaskModel taskModel, int createdUserId)
         {
+            taskModel.CreatedUserId = createdUserId;
+
             if (taskModel.Id == -1)
             {
                 return CreateTask(taskModel);
