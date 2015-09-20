@@ -10,7 +10,7 @@ namespace DataAccess.Operations
 {
     public class TaskOperations : Base
     {
-        public IEnumerable<TaskModel> GetTasksFor(TaskDuration duration)
+        public IEnumerable<TaskModel> GetTasksFor(TaskDuration duration, int userId)
         {
             List<TaskModel> tasks;
 

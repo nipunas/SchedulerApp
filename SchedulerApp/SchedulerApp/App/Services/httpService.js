@@ -30,15 +30,15 @@
             }
         }
 
-        var getTasks = function (duration, userId) {
-            return $http.get(urlFactory('tasks') + '/', { params: { "duration": duration, "userId": userId } })
+        var getTasks = function (duration) {
+            return $http.get(urlFactory('tasks') + '/', { params: { "duration": duration } })
                 .then(function (response) {
                     return response.data;
                 });
         };
 
-        var getTask = function (taskId, userId) {
-            return $http.get(urlFactory('getTask') + '/', { params: { "taskId": taskId, "userId": userId } })
+        var getTask = function (taskId) {
+            return $http.get(urlFactory('getTask') + '/', { params: { "taskId": taskId } })
                 .then(function (response) {
                     return response.data;
                 });

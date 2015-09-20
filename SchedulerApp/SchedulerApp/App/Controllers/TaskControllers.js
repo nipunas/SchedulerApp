@@ -7,8 +7,7 @@
         $scope.taskMeta = taskMeta;
 
         var search = function () {
-            var userId = 1;
-            TaskService.getTasks($scope.taskMeta.taskDuration, userId, function (data) {
+            TaskService.getTasks($scope.taskMeta.taskDuration, function (data) {
                 $scope.tasks = data;
             });
         };
@@ -81,7 +80,7 @@
 
         //Editing a task
         if ($routeParams.taskId !== undefined) {
-            TaskService.getTask($routeParams.taskId, 1, function (response) {
+            TaskService.getTask($routeParams.taskId, function (response) {
                 $scope.task.Id = response.Id;
                 $scope.task.Summary = response.Summary;
                 $scope.task.Description = response.Description;

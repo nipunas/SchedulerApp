@@ -26,5 +26,8 @@ namespace DataAccess.DBAccess
         }
     
         public virtual DbSet<Task> Tasks { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<TaskComment> TaskComments { get; set; }
     }
 }

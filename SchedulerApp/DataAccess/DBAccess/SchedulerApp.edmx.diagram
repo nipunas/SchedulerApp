@@ -6,6 +6,12 @@
     <edmx:Diagrams>
       <Diagram DiagramId="32ec471ac8e64a2296df44946412d0de" Name="Diagram1">
         <EntityTypeShape EntityType="SchedulerAppModel.Task" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchedulerAppModel.sysdiagram" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SchedulerAppModel.User" Width="1.5" PointX="1" PointY="4.25" />
+        <AssociationConnector Association="SchedulerAppModel.FK_Task_User" />
+        <EntityTypeShape EntityType="SchedulerAppModel.TaskComment" Width="1.5" PointX="6.25" PointY="3.25" />
+        <AssociationConnector Association="SchedulerAppModel.FK_TaskComments_Task" />
+        <AssociationConnector Association="SchedulerAppModel.FK_TaskComments_User" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

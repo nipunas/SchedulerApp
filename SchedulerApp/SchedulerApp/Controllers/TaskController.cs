@@ -8,6 +8,7 @@ using System.Configuration;
 using DataAccess.Models;
 using DataAccess.Operations;
 using DataAccess.Enums;
+using DataAccess.Security;
 
 namespace SchedulerApp.Controllers
 {
@@ -16,16 +17,17 @@ namespace SchedulerApp.Controllers
         readonly TaskOperations oper = new TaskOperations();
 
         // GET: Tasks
-        public JsonResult GetTasks(int duration, int userId)
+        public JsonResult GetTasks(int duration)
         {
-            List<TaskModel> tasks = oper.GetTasksFor((TaskDuration)duration).ToList();
+            int userId = HttpUserData.Get().Id;
+            List<TaskModel> tasks = oper.GetTasksFor((TaskDuration)duration, userId).ToList();
 
             return Json(tasks, JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult GetTask(int taskId, int userId)
+        public JsonResult GetTask(int taskId)
         {
-            return Json(oper.GetTask(taskId, userId), JsonRequestBehavior.AllowGet);
+            return Json(oper.GetTask(taskId, HttpUserData.Get().Id), JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]

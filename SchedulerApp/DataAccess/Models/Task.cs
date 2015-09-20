@@ -10,7 +10,7 @@ namespace DataAccess.Models
         public string Description { get; set; }
         public bool? Completed { get; set; }
         public DateTime DueDate { get; set; }
-        public IEnumerable<User> Assignees { get; set; }
+        public IEnumerable<UserModel> Assignees { get; set; }
         public bool? IsArchived { get; set; }
     }
 }

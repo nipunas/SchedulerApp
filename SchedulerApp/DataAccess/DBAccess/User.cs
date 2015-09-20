@@ -12,21 +12,19 @@ namespace DataAccess.DBAccess
     using System;
     using System.Collections.Generic;
     
-    public partial class Task
+    public partial class User
     {
-        public Task()
+        public User()
         {
+            this.Tasks = new HashSet<Task>();
             this.TaskComments = new HashSet<TaskComment>();
         }
     
-        public int TaskId { get; set; }
-        public string Summary { get; set; }
-        public string Description { get; set; }
-        public Nullable<System.DateTime> DueDate { get; set; }
-        public Nullable<bool> Completed { get; set; }
-        public Nullable<int> CreatedUserId { get; set; }
+        public int UserId { get; set; }
+        public string Name { get; set; }
+        public string Password { get; set; }
     
-        public virtual User User { get; set; }
+        public virtual ICollection<Task> Tasks { get; set; }
         public virtual ICollection<TaskComment> TaskComments { get; set; }
     }
 }

@@ -17,19 +17,6 @@ namespace DataAccess
                 using (SqlCommand cmd = new SqlCommand(sqlCommand, conn))
                 {
                     return cmd.ExecuteReader();
-
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            //for (int i = 0; i < reader.FieldCount; i++)
-                            //{
-                            //    data.Add(reader.GetValue(i).ToString());
-                            //    Console.WriteLine(reader.GetValue(i));
-                            //}
-                            Console.WriteLine();
-                        }
-                    }
                 }
             }
         }
