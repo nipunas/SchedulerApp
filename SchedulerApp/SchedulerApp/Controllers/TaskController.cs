@@ -28,9 +28,16 @@ namespace SchedulerApp.Controllers
             return Json(oper.GetTask(taskId, userId), JsonRequestBehavior.AllowGet);
         }
 
-        public void CreateTask(TaskModel task)
+        [HttpPost]
+        public JsonResult CreateTask(TaskModel task)
         {
-            oper.CreateTask(task);
+            return Json(oper.AddEditTask(task), JsonRequestBehavior.DenyGet);
+        }
+
+        [HttpPost]
+        public JsonResult EditTask(TaskModel task)
+        {
+            return Json(oper.AddEditTask(task), JsonRequestBehavior.DenyGet);
         }
 
         public void DeleteTask(int id)
