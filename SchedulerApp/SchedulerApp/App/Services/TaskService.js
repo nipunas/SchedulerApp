@@ -43,6 +43,16 @@
             //will be added each time you press add task
             tasks.push(newTask);
         },
+        editTask = function (taskData, callback) {
+            var newTask = new taskModel(taskData);
+
+            HttpService.createTask(newTask)
+                .then(callback);
+
+            //We need to push a new task everytime. Otherwise the same task with references
+            //will be added each time you press add task
+            tasks.push(newTask);
+        },
         deleteTask = function (taskId, callback) {
             HttpService.deleteTask(taskId)
             .then(callback);
@@ -63,6 +73,7 @@
             tasks: tasks,
             tasksLoaded: false,
             addTask: addTask,
+            editTask: editTask,
             deleteTask: deleteTask,
             changeTaskStatus: changeTaskStatus,
             getTasks: getTasks,

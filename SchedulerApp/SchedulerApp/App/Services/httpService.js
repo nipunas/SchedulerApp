@@ -17,6 +17,8 @@
                     return path + 'Task/GetTask';
                 case 'createTask':
                     return path + 'Task/CreateTask';
+                case 'editTask':
+                    return path + 'Task/EditTask';
                 case 'login':
                     return path + 'User/Login';
                 case 'deleteTask':
@@ -63,6 +65,13 @@
                 });
         };
 
+        var editTask = function (task) {
+            return $http.post(urlFactory('editTask'), task)
+                .then(function (response) {
+                    return response.data;
+                });
+        };
+
         var login = function (data) {
             return $http.post(urlFactory('login'), data)
                 .then(function (response) {
@@ -74,6 +83,7 @@
             getTasks: getTasks,
             getTask: getTask,
             createTask: createTask,
+            editTas: editTask,
             changeTaskStatus: changeTaskStatus,
             deleteTask : deleteTask,
             login: login

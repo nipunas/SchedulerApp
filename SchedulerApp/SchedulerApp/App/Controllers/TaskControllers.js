@@ -64,10 +64,15 @@
             DueDate: new Date()
         };
 
-        $scope.addTask = function (taskData) {
+        $scope.addEditTask = function (taskData) {
             //Don't add a new task if task exists
             if (taskData.Id === -1) {
                 TaskService.addTask(taskData, function (response) {
+                    $location.path('/');
+                });
+            }
+            else {
+                TaskService.editTask(taskData, function (response) {
                     $location.path('/');
                 });
             }
