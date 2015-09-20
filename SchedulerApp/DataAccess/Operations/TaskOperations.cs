@@ -64,23 +64,41 @@ namespace DataAccess.Operations
             return tasks;
         }
 
-        public void CreateTask(TaskModel taskModel)
+        public int CreateTask(TaskModel taskModel)
         {
             Task task = new Task();
             task.Summary = taskModel.Summary;
             task.Description = taskModel.Description;
             task.Completed = taskModel.Completed;
 
-            SchedulerAppEntities entities = new SchedulerAppEntities();
             entities.Tasks.Add(task);
             entities.SaveChanges();
 
-            int taskId = task.TaskId;
+            return task.TaskId;
         }
 
         public int AddEditTask(TaskModel taskModel)
         {
-            return 1;
+            if (taskModel.Id == -1)
+            {
+                return CreateTask(taskModel);
+            }
+            else
+            {
+                return EditTask(taskModel);
+            }
+        }
+
+        private int EditTask(TaskModel taskModel)
+        {
+            Task task = entities.Tasks.First(t => t.TaskId == taskModel.Id);
+
+            task.Summary = taskModel.Summary;
+            task.Description = taskModel.Description;
+
+            SaveChanges();
+
+            return task.TaskId;
         }
 
         public void DeleteTask(int id)
