@@ -34,6 +34,18 @@ namespace DataAccess.Security
             }
         }
 
+        public static void Abandon()
+        {
+            HttpUserData.Abandon();
+
+            //HttpSessionState session = GetSession();
+
+            //if(session!= null)
+            //{
+            //    session.Abandon();
+            //}
+        }
+
         public static void Store(UserModel profile)
         {
             HttpSessionState session = GetSession();
