@@ -13,7 +13,6 @@ namespace DataAccess.Security
     {
         private const string UserSessionKey = "AuthUser";
         private const string UserName = "UserName";
-        private const string UserProfile = "UserProfile";
 
         private static HttpSessionState GetSession()
         {
