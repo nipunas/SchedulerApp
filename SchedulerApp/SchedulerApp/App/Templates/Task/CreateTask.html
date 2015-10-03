@@ -37,10 +37,6 @@
         <h3 class="panel-title">Comments</h3>
     </div>
     <div class="panel-body">
-        <div class="form-group">
-            <label>Comment</label>
-            <input class="form-control" required type="text"  />
-            <input class="btn btn-default" type="submit" value="Add Comment" ng-click="addComment({})" />
-        </div>
+        <div ng-include="'Templates/Task/TaskCommentsView.html'"></div>
     </div>
 </div> 

@@ -97,4 +97,27 @@
 
     });
 
+    module.controller('TaskCommentsViewController', function ($scope, TaskService) {
+        $scope.comment = {
+            Id: -1,
+            Summary: '',
+            Description: ''
+        };
+
+        $scope.taskComments = [];
+
+        $scope.testVar = 1;
+
+        $scope.addComment = function () {
+            var obj = comment;
+        };
+
+        (function getCommentsForTask (){
+            
+
+
+        })();
+
+    });
+
 }());
