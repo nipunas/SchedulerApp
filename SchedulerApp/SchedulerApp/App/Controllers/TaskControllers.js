@@ -104,11 +104,20 @@
             Description: ''
         };
 
+        $scope.taskComments = [];
+
         $scope.testVar = 1;
 
-        $scope.addComment = function (comment) {
+        $scope.addComment = function () {
             var obj = comment;
         };
+
+        (function getCommentsForTask (){
+            
+
+
+        })();
+
     });
 
 }());
