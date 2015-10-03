@@ -102,7 +102,7 @@
     <Content Include="App\Templates\Home.html" />
     <Content Include="App\Templates\Settings.html" />
     <Content Include="App\Templates\Task\CreateTask.html" />
-    <Content Include="App\Templates\TaskTemplate.html" />
+    <Content Include="App\Templates\Task\TaskTemplate.html" />
     <Content Include="App\Templates\User\Login.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
