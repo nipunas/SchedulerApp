@@ -15,11 +15,11 @@
             templateUrl: "index.html"
         })
         .when('/addTask', {
-            templateUrl: "Templates/CreateTask.html",
+            templateUrl: "Templates/Task/CreateTask.html",
             controller: "AddEditTaskController"
         })
         .when('/editTask/:taskId', {
-            templateUrl: "Templates/CreateTask.html",
+            templateUrl: "Templates/Task/CreateTask.html",
             controller: "AddEditTaskController"
         })
         .when('/settings', {
