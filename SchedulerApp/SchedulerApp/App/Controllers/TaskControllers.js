@@ -113,12 +113,13 @@
         };
 
         getCommentsForTask = function () {
-
+            //Call service
         };
 
         (function getCommentsForTask (){
             getCommentsFromService();
             
+
 
 
         })();
