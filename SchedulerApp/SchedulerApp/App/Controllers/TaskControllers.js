@@ -112,6 +112,10 @@
             var obj = comment;
         };
 
+        getCommentsForTask = function () {
+
+        };
+
         (function getCommentsForTask (){
             getCommentsFromService();
             
