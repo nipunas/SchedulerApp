@@ -116,10 +116,10 @@
             //Call service
 
             //Assign to taskComments variable
-            var arr = [{ id: 1, comment: 'Comment 1' },
-            { id: 2, comment: 'Comment 2' },
-            { id: 3, comment: 'Comment 3' },
-            { id: 4, comment: 'Comment 4' }];
+            var arr = [{ id: 1, comment: 'A new role comes with a whole new set of expectations. There is an implicit' },
+            { id: 2, comment: 'Almost all organizations put a premium on competence and expertise. As you are trying to orient yourself' },
+            { id: 3, comment: 'f expectations. There is an implici' },
+            { id: 4, comment: 'ew role comes with a whole new set of expectations. There is an impli' }];
 
             for (var i = 0; i < arr.length; i++) {
                 $scope.taskComments.push(arr[i]);
