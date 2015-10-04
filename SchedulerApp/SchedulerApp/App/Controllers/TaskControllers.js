@@ -114,6 +114,16 @@
 
         getCommentsForTask = function () {
             //Call service
+
+            //Assign to taskComments variable
+            var arr = [{ id: 1, comment: 'Comment 1' },
+            { id: 2, comment: 'Comment 2' },
+            { id: 3, comment: 'Comment 3' },
+            { id: 4, comment: 'Comment 4' }];
+
+            for (var i = 0; i < arr.length; i++) {
+                $scope.taskComments.push(arr[i]);
+            }
         };
 
         (function getCommentsForTask (){
