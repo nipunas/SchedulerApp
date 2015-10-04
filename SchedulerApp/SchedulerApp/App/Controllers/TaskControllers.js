@@ -113,6 +113,7 @@
         };
 
         (function getCommentsForTask (){
+            getCommentsFromService();
             
 
 
