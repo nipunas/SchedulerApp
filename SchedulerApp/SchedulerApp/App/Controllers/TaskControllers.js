@@ -126,13 +126,7 @@
             }
         };
 
-        (function getCommentsForTask (){
-            getCommentsFromService();
-            
-
-
-
-        })();
+        getCommentsForTask();
 
     });
 
