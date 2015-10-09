@@ -134,6 +134,13 @@ namespace DataAccess.Operations
 
         }
 
+        public IEnumerable<TaskComment> GetTaskComments()
+        {
+            List<TaskComment> taskComments = new List<TaskComment>();
+
+            return taskComments;
+        }
+
         public void ChangeTaskStatus(int id, bool newState)
         {
             Task task = entities.Tasks.First(t => t.TaskId == id);
