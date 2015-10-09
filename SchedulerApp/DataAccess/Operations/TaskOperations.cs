@@ -134,9 +134,11 @@ namespace DataAccess.Operations
 
         }
 
-        public IEnumerable<TaskComment> GetTaskComments()
+        public IEnumerable<TaskComment> GetTaskComments(int taskId)
         {
             List<TaskComment> taskComments = new List<TaskComment>();
+
+            taskComments = entities.TaskComments.Where(t => t.TaskId == taskId).Select(t => new TaskComment());
 
             return taskComments;
         }
