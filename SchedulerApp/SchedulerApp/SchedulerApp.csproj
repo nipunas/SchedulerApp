@@ -167,7 +167,7 @@
     <Content Include="Scripts\angular-sanitize.js" />
     <Content Include="Scripts\angular-sanitize.min.js" />
     <Content Include="Scripts\angular-scenario.js" />
-    <Content Include="Scripts\angular-sortable-view.js" />
+    <Content Include="Scripts\Libraries\angular-sortable-view.js" />
     <Content Include="Scripts\angular-touch.js" />
     <Content Include="Scripts\angular-touch.min.js" />
     <Content Include="Scripts\angular.js" />
@@ -929,6 +929,7 @@
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery-ui-1.11.4.js" />
     <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
+    <Content Include="Scripts\Libraries\notify.js" />
     <Content Include="Test\app.js" />
     <Content Include="Test\index.html" />
     <Content Include="Test\main.js" />

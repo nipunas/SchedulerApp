@@ -30,6 +30,7 @@
 
         $scope.deleteTask = function (taskId) {
             TaskService.deleteTask(taskId, function () {
+                $.notify('Task Deleted');
                 var item = $filter('filter')($scope.tasks, { Id: taskId }, true);
                 if (item.length === 1) {
                     var itemIndex = $scope.tasks.indexOf(item[0]);
@@ -48,6 +49,7 @@
 
         if (!TaskService.tasksLoaded) {
             search();
+            $.notify('Now you can drag and drop tasks', { clickToHide: true, className: 'info' });
         }
     };
 
