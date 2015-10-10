@@ -1,6 +1,6 @@
 ﻿(function () {
     
-    var app = angular.module('SchedulerApp', ["ngRoute"]);
+    var app = angular.module('SchedulerApp', ["ngRoute", "angular-sortable-view"]);
 
     //Register routes via. Config
     app.config(function ($routeProvider) {
