@@ -138,7 +138,7 @@ namespace DataAccess.Operations
         {
             List<TaskComment> taskComments = new List<TaskComment>();
 
-            taskComments = entities.TaskComments.Where(t => t.TaskId == taskId).Select(t => new TaskComment());
+            //taskComments = entities.TaskComments.Where(t => t.TaskId == taskId).Select(t => new TaskComment());
 
             return taskComments;
         }
