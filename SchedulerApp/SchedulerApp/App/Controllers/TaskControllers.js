@@ -20,12 +20,14 @@
             if (newObject === undefined || oldObject === undefined)
                 return;
 
-            var newState = newObject[0].Completed;
+            for (var i = 0; i < newObject.length; i++) {
+                if (oldObject[i].Completed !== newObject[i].Completed) {
+                    var newState = newObject[i].Completed;
+                    TaskService.changeTaskStatus(newObject[i].Id, newState, function (data) {
 
-            TaskService.changeTaskStatus(newObject[0].Id, newState, function (data) {
-
-            });
-
+                    });
+                }
+            }
         },true);
 
         $scope.deleteTask = function (taskId) {
