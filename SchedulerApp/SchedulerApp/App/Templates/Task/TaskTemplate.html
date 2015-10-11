@@ -27,10 +27,10 @@
                 <th>Delete</th>
             </tr>
         </thead>
-        <tr class="task-holder" ng-repeat="task in tasks" sv-element="opts" style="cursor: move">
+        <tr class="task-holder" ng-repeat="task in tasks" >
             <td ng-hide="1">{{ task.Id }}</td>
 
-            <td ng-class="{'strike-task': task.Completed}">{{ task.Summary }}</td>
+            <td ng-class="{'strike-task': task.Completed}" sv-element="opts" style="cursor: move">{{ task.Summary }}</td>
 
             <td ng-class="{'strike-task': task.Completed}">{{ task.Description }}</td>
 
