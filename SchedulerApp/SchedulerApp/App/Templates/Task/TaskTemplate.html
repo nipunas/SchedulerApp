@@ -22,6 +22,7 @@
                 <th ng-hide="1">Id</th>
                 <th>Summary</th>
                 <th>Description</th>
+                <th>Labels</th>
                 <th>Edit</th>
                 <th>Complete</th>
                 <th>Delete</th>
@@ -33,6 +34,13 @@
             <td ng-class="{'strike-task': task.Completed}" sv-element="opts" style="cursor: move">{{ task.Summary }}</td>
 
             <td ng-class="{'strike-task': task.Completed}">{{ task.Description }}</td>
+
+            <td ng-hide="1" ng-class="{'strike-task': task.Completed}">
+                <span class="task-label" style="background-color: #1022e5;">Recurring</span>
+                <span class="task-label" style="background-color: #ffd800;">Pending</span>
+                <span class="task-label" style="background-color: #ff0000;">Due</span>
+
+            </td>
 
             <td><span ng-click="editTask(task.Id)" class="glyphicon glyphicon-edit" style="cursor: pointer;"></span></td>
 

@@ -34,9 +34,18 @@
     color: #9f3c3c;
 }
 
+.task-label {
+    padding: 2px 3px;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 4px;
+    margin:1px;
+}
+
 .form-holder {
     width: 500px;
     margin: 15px;
     background: #f1eeee;
     border:#bac1c6;
 }
+
