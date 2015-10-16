@@ -11,6 +11,7 @@ namespace DataAccess.Models
         public bool? Completed { get; set; }
         public DateTime DueDate { get; set; }
         public IEnumerable<UserModel> Assignees { get; set; }
+        public IEnumerable<TaskCommentModel> Comments { get; set; }
         public bool? IsArchived { get; set; }
         public int CreatedUserId { get; set; }
     }
