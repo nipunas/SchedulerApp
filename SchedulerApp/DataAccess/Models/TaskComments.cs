@@ -2,7 +2,7 @@
 
 namespace DataAccess.Models
 {
-    public class TaskComments
+    public class TaskCommentModel
     {
         public int TaskId { get; set; }
         public int CommentId { get; set; }
