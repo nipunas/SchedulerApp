@@ -1,10 +1,8 @@
-﻿<div ng-controller="TaskCommentsViewController">
-    <div class="form-group">
-        <div ng-repeat="comment in taskComments" style="padding:8px; background-color:#f2f1fa;margin: 3px; border:1px solid #f6f0f0;">
-            <div style="padding:1px;">{{ comment.comment }}</div>
-        </div>
-        <label>Comment</label>
-        <input class="form-control" required type="text" />
-        <input class="btn btn-default" type="submit" value="Add Comment" ng-click="addComment()" />
+﻿<div class="form-group">
+    <div ng-repeat="comment in task.Comments" style="padding:8px; background-color:#f2f1fa;margin: 3px; border:1px solid #f6f0f0;">
+        <div style="padding:1px;">{{ comment.Comment }}</div>
     </div>
+    <label>Comment</label>
+    <input class="form-control" required type="text" ng-model="comment.Comment"/>
+    <input class="btn btn-default" type="submit" value="Add Comment" ng-click="addEditComment(comment);" />
 </div>
