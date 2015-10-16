@@ -42,6 +42,12 @@ namespace SchedulerApp.Controllers
             return Json(oper.AddEditTask(task, HttpUserData.Get().Id), JsonRequestBehavior.DenyGet);
         }
 
+        [HttpPost]
+        public JsonResult CreateComment(TaskCommentModel comment)
+        {
+            return Json(oper.CreateComment(comment, HttpUserData.Get().Id), JsonRequestBehavior.DenyGet);
+        }
+
         public void DeleteTask(int id)
         {
             oper.DeleteTask(id);
