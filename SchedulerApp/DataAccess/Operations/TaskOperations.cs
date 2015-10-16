@@ -134,9 +134,9 @@ namespace DataAccess.Operations
 
         }
 
-        public IEnumerable<TaskComment> GetTaskComments(int taskId)
+        public IEnumerable<TaskCommentModel> GetTaskComments(int taskId)
         {
-            List<TaskComment> taskComments = new List<TaskComment>();
+            List<TaskCommentModel> taskComments = new List<TaskCommentModel>();
 
             //taskComments = entities.TaskComments.Where(t => t.TaskId == taskId).Select(t => new TaskComment());
 
@@ -154,6 +154,20 @@ namespace DataAccess.Operations
         {
             return entities.Tasks.First(t => t.TaskId == taskId).ToTaskModel();
         }
+
+        public int CreateComment(TaskCommentModel comment, int userId)
+        {
+            Task task = entities.Tasks.First(t => t.TaskId == comment.TaskId);
+
+            TaskComment newComment = entities.TaskComments.Create();
+            newComment.CreatedUserId = userId;
+            newComment.Comment = comment.Comment;
+
+            task.TaskComments.Add(newComment);
+            SaveChanges();
+
+            return newComment.CommentId;
+        }
     }
 
     public static class TaskOperationMappers
@@ -165,7 +179,12 @@ namespace DataAccess.Operations
                 Id = task.TaskId,
                 Summary = task.Summary,
                 Description = task.Description,
-                Completed = task.Completed
+                Completed = task.Completed,
+                Comments = task.TaskComments.Select(t => new Models.TaskCommentModel
+                {
+                    Comment = t.Comment,
+                    CommentId = t.CommentId
+                })
             };
         }
     }
