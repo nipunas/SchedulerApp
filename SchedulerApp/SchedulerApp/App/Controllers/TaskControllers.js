@@ -66,6 +66,10 @@
             Completed: false,
             DueDate: new Date()
         };
+        $scope.comment = {
+            Id: -1,
+            Comment : ''
+        };
 
         $scope.addEditTask = function (taskData) {
             //Don't add a new task if task exists
@@ -82,6 +86,15 @@
             $location.path('/');
         };
 
+        $scope.addEditComment = function (comment) {
+            if ($scope.task.Id !== -1) {
+                comment.TaskId = $scope.task.Id;
+                TaskService.addComment(comment, function (response) {
+                    //Notify
+                });
+            }
+        };
+
         //Editing a task
         if ($routeParams.taskId !== undefined) {
             TaskService.getTask($routeParams.taskId, function (response) {
@@ -89,7 +102,8 @@
                 $scope.task.Summary = response.Summary;
                 $scope.task.Description = response.Description;
                 $scope.task.Completed = response.Completed;
-                $scope.task.DueDate = new Date(parseInt(response.DueDate.replace('/Date(', '')));;
+                $scope.task.DueDate = new Date(parseInt(response.DueDate.replace('/Date(', '')));
+                $scope.Comments = response.Comments;
             });
         }
 
@@ -101,37 +115,37 @@
 
     });
 
-    module.controller('TaskCommentsViewController', function ($scope, TaskService) {
-        $scope.comment = {
-            Id: -1,
-            Summary: '',
-            Description: ''
-        };
+    //module.controller('TaskCommentsViewController', function ($scope, TaskService) {
+    //    $scope.comment = {
+    //        Id: -1,
+    //        Summary: '',
+    //        Description: ''
+    //    };
 
-        $scope.taskComments = [];
+    //    $scope.taskComments = [];
 
-        $scope.testVar = 1;
+    //    $scope.testVar = 1;
 
-        $scope.addComment = function () {
-            var obj = comment;
-        };
+    //    $scope.addComment = function () {
+    //        var obj = comment;
+    //    };
 
-        getCommentsForTask = function () {
-            //Call service
+    //    getCommentsForTask = function () {
+    //        //Call service
 
-            //Assign to taskComments variable
-            var arr = [{ id: 1, comment: 'A new role comes with a whole new set of expectations. There is an implicit' },
-            { id: 2, comment: 'Almost all organizations put a premium on competence and expertise. As you are trying to orient yourself' },
-            { id: 3, comment: 'f expectations. There is an implici' },
-            { id: 4, comment: 'ew role comes with a whole new set of expectations. There is an impli' }];
+    //        //Assign to taskComments variable
+    //        var arr = [{ id: 1, comment: 'A new role comes with a whole new set of expectations. There is an implicit' },
+    //        { id: 2, comment: 'Almost all organizations put a premium on competence and expertise. As you are trying to orient yourself' },
+    //        { id: 3, comment: 'f expectations. There is an implici' },
+    //        { id: 4, comment: 'ew role comes with a whole new set of expectations. There is an impli' }];
 
-            for (var i = 0; i < arr.length; i++) {
-                $scope.taskComments.push(arr[i]);
-            }
-        };
+    //        for (var i = 0; i < arr.length; i++) {
+    //            $scope.taskComments.push(arr[i]);
+    //        }
+    //    };
 
-        getCommentsForTask();
+    //    getCommentsForTask();
 
-    });
+    //});
 
 }());
