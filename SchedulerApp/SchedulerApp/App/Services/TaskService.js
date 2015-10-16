@@ -33,6 +33,15 @@
 
             return item;
         },
+        commentModel = function (model) {
+
+            var item = {};
+            item.CommentId = model.Id;
+            item.TaskId = model.TaskId;
+            item.Comment = model.Comment;
+
+            return item;
+        },
         addTask = function (taskData, callback) {
             var newTask = new taskModel(taskData);
 
@@ -52,6 +61,12 @@
             //We need to push a new task everytime. Otherwise the same task with references
             //will be added each time you press add task
             tasks.push(newTask);
+        },
+        addComment = function (comment, callback) {
+            var newComment = new commentModel(comment);
+
+            HttpService.createComment(newComment)
+                .then(callback);
         },
         deleteTask = function (taskId, callback) {
             HttpService.deleteTask(taskId)
@@ -74,6 +89,7 @@
             tasksLoaded: false,
             addTask: addTask,
             editTask: editTask,
+            addComment: addComment,
             deleteTask: deleteTask,
             changeTaskStatus: changeTaskStatus,
             getTasks: getTasks,
