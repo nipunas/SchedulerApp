@@ -36,6 +36,7 @@
         commentModel = function (model) {
 
             var item = {};
+
             item.CommentId = model.Id;
             item.TaskId = model.TaskId;
             item.Comment = model.Comment;
