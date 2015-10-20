@@ -68,5 +68,11 @@ namespace SchedulerApp.Controllers
             return Json(operation.GetTasks(connectionString, 1), JsonRequestBehavior.AllowGet);
 
         }
+
+        public JsonResult DeleteComment(int commentId)
+        {
+            //Stub for Deleting Comments
+            throw new NotImplementedException();
+        }
     }
 }
