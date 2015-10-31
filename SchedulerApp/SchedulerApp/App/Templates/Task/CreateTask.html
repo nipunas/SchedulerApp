@@ -6,15 +6,17 @@
         <div class="panel-body">
             <div class="form-group">
                 <label>Summary</label>
-                <input class="form-control" required type="text" ng-model="task.Summary" />
+                <input class="form-control" required type="text" ng-model="task.Summary" ng-disabled="task.Completed" />
             </div>
             <div class="form-group">
                 <label>Description</label>
-                <textarea class="form-control" style="height:100px;" required ng-model="task.Description"></textarea>
+                <textarea class="form-control" style="height:100px;" required ng-model="task.Description"
+                          ng-disabled="task.Completed"></textarea>
             </div>
             <div class="form-group">
                 <label>Date</label>
-                <input type="text" id="task-duedate" class="datepicker form-control" ng-model="task.DueDate" />
+                <input type="text" id="task-duedate" class="datepicker form-control" ng-model="task.DueDate"
+                       ng-disabled="task.Completed" />
                 <label for="task-duedate" class="input-group-addon btn">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </label>
@@ -28,7 +30,8 @@
                 </div>
             </div>
             
-            <input class="btn btn-default" type="submit" value="Create/Edit Task" ng-click="addEditTask(task)" />
+            <input class="btn btn-default" type="submit" value="Create/Edit Task" ng-click="addEditTask(task)"
+                   ng-disabled="task.Completed" />
         </div>
     </form>
 </div>
