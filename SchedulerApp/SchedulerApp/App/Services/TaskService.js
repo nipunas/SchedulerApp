@@ -37,8 +37,8 @@
 
             var item = {};
 
-            item.CommentId = model.Id;
             item.TaskId = model.TaskId;
+            item.CommentId = model.CommentId;
             item.Comment = model.Comment;
 
             return item;

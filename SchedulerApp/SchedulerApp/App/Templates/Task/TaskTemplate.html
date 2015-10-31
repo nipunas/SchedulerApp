@@ -22,7 +22,7 @@
                 <th ng-hide="1">Id</th>
                 <th>Summary</th>
                 <th>Description</th>
-                <th>Labels</th>
+                <th ng-hide="1">Labels</th>
                 <th>Edit</th>
                 <th>Complete</th>
                 <th>Delete</th>
@@ -30,22 +30,15 @@
         </thead>
         <tr class="task-holder" ng-repeat="task in tasks" >
             <td ng-hide="1">{{ task.Id }}</td>
-
             <td ng-class="{'strike-task': task.Completed}" sv-element="opts" style="cursor: move">{{ task.Summary }}</td>
-
             <td ng-class="{'strike-task': task.Completed}">{{ task.Description }}</td>
-
             <td ng-hide="1" ng-class="{'strike-task': task.Completed}">
                 <span class="task-label" style="background-color: #1022e5;">Recurring</span>
                 <span class="task-label" style="background-color: #ffd800;">Pending</span>
                 <span class="task-label" style="background-color: #ff0000;">Due</span>
-
             </td>
-
             <td><span ng-click="editTask(task.Id)" class="glyphicon glyphicon-edit" style="cursor: pointer;"></span></td>
-
             <td><input type="checkbox" ng-model="task.Completed" /></td>
-
             <td><span ng-click="deleteTask(task.Id)" class="glyphicon glyphicon-trash" style="cursor: pointer;"></span></td>
         </tr>
     </table>

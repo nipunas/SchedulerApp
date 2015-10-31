@@ -67,7 +67,8 @@
             DueDate: new Date()
         };
         $scope.comment = {
-            Id: -1,
+            CommentId: -1,
+            TaskId: -1,
             Comment : ''
         };
 

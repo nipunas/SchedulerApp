@@ -45,7 +45,7 @@ namespace SchedulerApp.Controllers
         [HttpPost]
         public JsonResult CreateComment(TaskCommentModel comment)
         {
-            return Json(oper.CreateComment(comment, HttpUserData.Get().Id), JsonRequestBehavior.DenyGet);
+            return Json(oper.CreateComment(comment, HttpUserData.Get().Id), JsonRequestBehavior.AllowGet);
         }
 
         public void DeleteTask(int id)
