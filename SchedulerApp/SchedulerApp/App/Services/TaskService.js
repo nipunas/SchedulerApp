@@ -39,7 +39,7 @@
 
             item.TaskId = model.TaskId;
             item.CommentId = model.CommentId;
-            item.Comment = model.Comment;
+            item.CommentText = model.Comment;
 
             return item;
         },
