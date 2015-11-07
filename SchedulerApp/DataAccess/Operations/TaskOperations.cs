@@ -161,7 +161,7 @@ namespace DataAccess.Operations
 
             TaskComment newComment = entities.TaskComments.Create();
             newComment.CreatedUserId = userId;
-            newComment.Comment = comment.Comment;
+            newComment.Comment = comment.CommentText;
 
             task.TaskComments.Add(newComment);
             SaveChanges();
@@ -182,8 +182,8 @@ namespace DataAccess.Operations
                 Completed = task.Completed,
                 Comments = task.TaskComments.Select(t => new Models.TaskCommentModel
                 {
-                    Comment = t.Comment,
-                    CommentId = t.CommentId
+                    //Comment = t.Comment,
+                    //CommentId = t.CommentId
                 })
             };
         }
