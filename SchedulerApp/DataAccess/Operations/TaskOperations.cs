@@ -182,8 +182,8 @@ namespace DataAccess.Operations
                 Completed = task.Completed,
                 Comments = task.TaskComments.Select(t => new Models.TaskCommentModel
                 {
-                    //Comment = t.Comment,
-                    //CommentId = t.CommentId
+                    CommentText = t.Comment,
+                    CommentId = t.CommentId
                 })
             };
         }
