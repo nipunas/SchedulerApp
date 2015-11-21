@@ -26,10 +26,12 @@
         taskModel = function (model) {
 
             var item = {};
+
             item.Id = model.Id;
             item.Summary = model.Summary;
             item.Description = model.Description;
-            item.Completed = model.Completed
+            item.Completed = model.Completed;
+            item.DueDate = model.DueDate;
 
             return item;
         },
