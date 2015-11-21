@@ -77,6 +77,7 @@ namespace DataAccess.Operations
             task.Description = taskModel.Description;
             task.Completed = taskModel.Completed;
             task.CreatedUserId = taskModel.CreatedUserId;
+            task.DueDate = taskModel.DueDate;
 
             entities.Tasks.Add(task);
             entities.SaveChanges();
@@ -104,6 +105,7 @@ namespace DataAccess.Operations
 
             task.Summary = taskModel.Summary;
             task.Description = taskModel.Description;
+            task.DueDate = taskModel.DueDate;
 
             SaveChanges();
 
