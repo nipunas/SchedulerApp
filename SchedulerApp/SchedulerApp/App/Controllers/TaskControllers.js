@@ -111,7 +111,9 @@
         //Can also do 
         //http://stackoverflow.com/questions/18144142/jquery-ui-datepicker-with-angularjs
         $(function () {
-            $(".datepicker").datepicker();
+            $(".datepicker").datepicker({
+                dateFormat: "yy-mm-dd"
+            });
         });
 
     });
