@@ -18,13 +18,16 @@ namespace DataAccess.Operations
 
             if (duration == TaskDuration.Today)
             {
-                tasks = entities.Tasks.Where(t=> t.DueDate == DateTime.Today).ToList().Select(t => new TaskModel()
-                {
-                    Id = t.TaskId,
-                    Summary = t.Summary,
-                    Description = t.Description,
-                    Completed = t.Completed
-                }).ToList();
+                tasks = entities.Tasks
+                    .Where(t => t.DueDate == DateTime.Today)
+                    .ToList()
+                    .Select(t => new TaskModel()
+                    {
+                        Id = t.TaskId,
+                        Summary = t.Summary,
+                        Description = t.Description,
+                        Completed = t.Completed
+                    }).ToList();
             }
             else if (duration == TaskDuration.Week)
             {
@@ -50,7 +53,10 @@ namespace DataAccess.Operations
             }
 
             //Add tasks without dueDate regardless of the filter
-            List<TaskModel> tasksWithoutDueDate = entities.Tasks.Where(t => t.DueDate == null).ToList()
+            List<TaskModel> tasksWithoutDueDate = entities.Tasks
+                .Where(t => t.DueDate == null)
+                .Where(t => t.Completed != true)
+                .ToList()
                 .Select(t => new TaskModel()
                 {
                     Id = t.TaskId,
