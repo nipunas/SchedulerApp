@@ -29,6 +29,19 @@ namespace DataAccess.Operations
                         Completed = t.Completed
                     }).ToList();
             }
+            else if(duration == TaskDuration.Yesterday)
+            {
+                tasks = entities.Tasks
+                    .Where(t => t.DueDate == DateTime.Today.AddDays(-1))
+                    .ToList()
+                    .Select(t => new TaskModel()
+                    {
+                        Id = t.TaskId,
+                        Summary = t.Summary,
+                        Description = t.Description,
+                        Completed = t.Completed
+                    }).ToList();
+            }
             else if (duration == TaskDuration.Week)
             {
                 tasks = entities.Tasks
