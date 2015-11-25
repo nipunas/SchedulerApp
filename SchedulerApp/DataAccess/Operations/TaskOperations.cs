@@ -31,8 +31,9 @@ namespace DataAccess.Operations
             }
             else if(duration == TaskDuration.Yesterday)
             {
+                DateTime date = DateTime.Today.AddDays(-1);
                 tasks = entities.Tasks
-                    .Where(t => t.DueDate == DateTime.Today.AddDays(-1))
+                    .Where(t => t.DueDate == date)
                     .ToList()
                     .Select(t => new TaskModel()
                     {
