@@ -10,6 +10,8 @@
                     return 2;
                 case 'month':
                     return 3;
+                case 'yesterday':
+                    return 4;
                 default:
                     return 0;
             }
