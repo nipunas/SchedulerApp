@@ -10,6 +10,7 @@ namespace DataAccess.Enums
     {
         Today = 1,
         Week,
-        Month
+        Month,
+        Yesterday
     }
 }
