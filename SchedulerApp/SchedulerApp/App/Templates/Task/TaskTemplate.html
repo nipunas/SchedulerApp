@@ -1,6 +1,8 @@
 ﻿<div>
     <div style="padding:10px;">
         <h3>You're currently viewing tasks for {{ taskMeta.taskDuration }}</h3>
+        <h4>You have completed 1 out of {{tasks.length}} tasks</h4>
+        <br />
         <div>
             <label>
                 <input type="radio" ng-model="taskMeta.taskDuration" name="task-period" id="task-period" value="yesterday">
