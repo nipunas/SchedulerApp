@@ -5,6 +5,7 @@
         var taskMeta = {};
         taskMeta.taskDuration = "today";
         $scope.taskMeta = taskMeta;
+        $scope.completedTasks = $scope.tasks
 
         var search = function () {
             TaskService.getTasks($scope.taskMeta.taskDuration, function (data) {
