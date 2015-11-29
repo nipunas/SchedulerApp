@@ -5,6 +5,6 @@
         </div>
     </div>
     <label>Comment</label>
-    <input class="form-control" required type="text" ng-model="comment.Comment"/>
-    <input class="btn btn-default" type="submit" value="Add Comment" ng-click="addEditComment(comment);" />
+    <input class="form-control" required type="text" ng-disabled="task.Id < 1" ng-model="comment.Comment"/>
+    <input class="btn btn-default" type="submit" ng-disabled="task.Id < 1" value="Add Comment" ng-click="addEditComment(comment);" />
 </div>
