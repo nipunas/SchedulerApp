@@ -96,6 +96,7 @@
     <Content Include="App\Controllers\TaskControllers.js" />
     <Content Include="App\Services\AppService.js" />
     <Content Include="App\Services\httpService.js" />
+    <Content Include="App\Services\SettingsService.js" />
     <Content Include="App\Services\TaskService.js" />
     <Content Include="App\Shared\Menu\menu.html" />
     <Content Include="App\Models\Task.js" />
@@ -978,6 +979,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Test\" />
     <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
