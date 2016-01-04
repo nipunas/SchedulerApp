@@ -32,6 +32,7 @@
 
     });
 
+    //Resource
     //http://stackoverflow.com/questions/10486769/cannot-get-to-rootscope
     app.run(function ($rootScope, $location, $window) {
 

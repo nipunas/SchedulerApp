@@ -74,5 +74,17 @@ namespace SchedulerApp.Controllers
             //Stub for Deleting Comments
             throw new NotImplementedException();
         }
+
+        public JsonResult GetDateTime()
+        {
+            DateTime dateTime = new DateTime();
+            return Json(dateTime.ToString("d"), JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetDateTime2()
+        {
+            DateTime dateTime = default(DateTime);
+            return Json(dateTime.ToString("d"), JsonRequestBehavior.AllowGet);
+        }
     }
 }
