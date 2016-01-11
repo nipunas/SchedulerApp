@@ -47,5 +47,15 @@ namespace SchedulerApp.Controllers
             UserModel user = new UserModel() { Id = 1, Name = "Nipuna", IsAdmin = true };
             return Json(user, JsonRequestBehavior.AllowGet);
         }
+
+        public void CreateUser(UserModel user)
+        {
+            
+        }
+
+        public void UpdateUser(UserModel user)
+        {
+
+        }
     }
 }
