@@ -1,7 +1,8 @@
 ﻿<div>
     <div style="padding:10px;">
         <h3>You're currently viewing tasks for {{ taskMeta.taskDuration }}</h3>
-        <h4>You have completed <span ng-bind="(task in tasks | filter: { Completed:true }).length"></span> out of {{tasks.length}} tasks</h4>
+        <!--<h4>You have completed <span ng-bind="(task in tasks || filter: { Completed:true }).length"></span> out of {{tasks.length}} tasks</h4>-->
+        <h4>You have completed <span ng-bind="(task in tasks || filter: { Completed:true }).length"></span> out of {{tasks.length}} tasks</h4>
         <br />
         <div>
             <label>
