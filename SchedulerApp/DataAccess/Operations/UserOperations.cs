@@ -2,6 +2,8 @@
 using System.Linq;
 using DataAccess.DBAccess;
 using DataAccess.Models;
+using System;
+
 namespace DataAccess.Operations
 {
     public class UserOperations : Base
@@ -34,6 +36,12 @@ namespace DataAccess.Operations
             entities.Users.Add(user);
 
             return user.UserId;
+        }
+
+        public void DeleteUser(int userId)
+        {
+            User user = entities.Users.First(u => u.UserId == userId);
+            entities.Users.Remove(user);
         }
     }
 }
