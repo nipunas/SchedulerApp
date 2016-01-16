@@ -23,5 +23,17 @@ namespace DataAccess.Operations
 
             return userModel;
         }
+
+        public int CreateUser(UserModel model)
+        {
+            User user = entities.Users.Create();
+
+            user.Name = model.Name;
+            user.Password = model.Password;
+
+            entities.Users.Add(user);
+
+            return user.UserId;
+        }
     }
 }
