@@ -11,11 +11,11 @@ namespace DataAccess.Operations
         public UserModel IsValidUser(out bool isValidUser, UserModel userModel)
         {
             User user = entities.Users.FirstOrDefault(u => u.Name == userModel.Name && u.Password == userModel.Password);
-
+            
             if (user != null)
             {
                 userModel.Id = user.UserId;
-                isValidUser = true;
+                isValidUser = user.IsActive.GetValueOrDefault(false);
             }
             else
             {
