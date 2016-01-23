@@ -23,6 +23,7 @@ namespace DataAccess.DBAccess
         public int UserId { get; set; }
         public string Name { get; set; }
         public string Password { get; set; }
+        public Nullable<bool> IsActive { get; set; }
     
         public virtual ICollection<Task> Tasks { get; set; }
         public virtual ICollection<TaskComment> TaskComments { get; set; }
