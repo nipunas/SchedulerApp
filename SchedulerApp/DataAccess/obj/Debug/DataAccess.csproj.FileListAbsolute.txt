@@ -13,3 +13,13 @@ E:\Repos\Github\scheduler-app\schedulerapp\SchedulerApp\DataAccess\bin\Debug\Ent
 E:\Repos\Github\scheduler-app\schedulerapp\SchedulerApp\DataAccess\obj\Debug\DataAccess.dll
 E:\Repos\Github\scheduler-app\schedulerapp\SchedulerApp\DataAccess\obj\Debug\DataAccess.pdb
 E:\Repos\Github\scheduler-app\schedulerapp\SchedulerApp\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+H:\Repos\Github\scheduler-app\schedulerapp\SchedulerApp\DataAccess\bin\Debug\DataAccess.dll.config
+H:\Repos\Github\scheduler-app\schedulerapp\SchedulerApp\DataAccess\bin\Debug\DataAccess.dll
+H:\Repos\Github\scheduler-app\schedulerapp\SchedulerApp\DataAccess\bin\Debug\DataAccess.pdb
+H:\Repos\Github\scheduler-app\schedulerapp\SchedulerApp\DataAccess\bin\Debug\EntityFramework.dll
+H:\Repos\Github\scheduler-app\schedulerapp\SchedulerApp\DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+H:\Repos\Github\scheduler-app\schedulerapp\SchedulerApp\DataAccess\bin\Debug\EntityFramework.xml
+H:\Repos\Github\scheduler-app\schedulerapp\SchedulerApp\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+H:\Repos\Github\scheduler-app\schedulerapp\SchedulerApp\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+H:\Repos\Github\scheduler-app\schedulerapp\SchedulerApp\DataAccess\obj\Debug\DataAccess.dll
+H:\Repos\Github\scheduler-app\schedulerapp\SchedulerApp\DataAccess\obj\Debug\DataAccess.pdb
