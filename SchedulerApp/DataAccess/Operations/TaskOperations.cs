@@ -191,23 +191,4 @@ namespace DataAccess.Operations
             return newComment.CommentId;
         }
     }
-
-    public static class TaskOperationMappers
-    {
-        public static TaskModel ToTaskModel(this Task task)
-        {
-            return new TaskModel
-            {
-                Id = task.TaskId,
-                Summary = task.Summary,
-                Description = task.Description,
-                Completed = task.Completed,
-                Comments = task.TaskComments.Select(t => new Models.TaskCommentModel
-                {
-                    CommentText = t.Comment,
-                    CommentId = t.CommentId
-                })
-            };
-        }
-    }
 }
