@@ -9,7 +9,11 @@
         })
         .when('/login', {
             templateUrl: "index.html",
-            controller: "LoginController"
+            controller: "UserController"
+        })
+        .when('/login', {
+            templateUrl: "Templates/User/Signup.html",
+            controller: "UserController"
         })
         .when('/logout', {
             templateUrl: "index.html"
