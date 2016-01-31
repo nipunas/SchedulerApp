@@ -87,7 +87,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App\Controllers\LoginController.js" />
+    <Content Include="App\Controllers\UserController.js" />
     <Content Include="App\index.html" />
     <Content Include="App\app.html" />
     <Content Include="App\app.js" />
@@ -106,6 +106,7 @@
     <Content Include="App\Templates\Task\TaskCommentsView.html" />
     <Content Include="App\Templates\Task\TaskTemplate.html" />
     <Content Include="App\Templates\User\Login.html" />
+    <Content Include="App\Templates\User\Signup.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
