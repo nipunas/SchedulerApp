@@ -27,6 +27,10 @@
             HttpService.login($scope.user)
             .then(onSuccess);
         }
+
+        $scope.signup = function () {
+            HttpService.signup()
+        }
     };
 
     app.controller("LoginController", ["$scope", "HttpService", "$window", LoginController]);
