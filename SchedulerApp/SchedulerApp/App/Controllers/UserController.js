@@ -2,7 +2,7 @@
 
     var app = angular.module('SchedulerApp');
 
-    var LoginController = function ($scope, HttpService, $window) {
+    var LoginController = function ($scope, HttpService, $window, $location) {
 
         var onSuccess = function (data) {
             if (data === true) {
@@ -29,11 +29,11 @@
         }
 
         $scope.signup = function () {
-            HttpService.signup()
+            $window.location.href = "Templates/User/Signup.html";
         }
     };
 
-    app.controller("LoginController", ["$scope", "HttpService", "$window", LoginController]);
+    app.controller("LoginController", LoginController);
 
     //----------------------------------------------------------------
 

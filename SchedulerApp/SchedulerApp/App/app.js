@@ -11,7 +11,7 @@
             templateUrl: "index.html",
             controller: "UserController"
         })
-        .when('/login', {
+        .when('/signup', {
             templateUrl: "Templates/User/Signup.html",
             controller: "UserController"
         })
