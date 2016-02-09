@@ -9,7 +9,7 @@
                 goToApp();
             }
             else {
-                alert('Not Logged in');
+                console.log('Not Logged in');
             }
         },
         goToApp = function () {
