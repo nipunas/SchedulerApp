@@ -15,3 +15,6 @@ Client
 - Highlight task
 
 - Popup to create task
+
+- Implement a proper user friendly UI
+- Improve saving mechanism
